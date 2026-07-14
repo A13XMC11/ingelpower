@@ -4,6 +4,10 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
+// A fresh CSP nonce is generated per-request in src/proxy.ts; Next.js needs
+// dynamic rendering to apply it to its inline hydration scripts.
+export const dynamic = "force-dynamic";
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],

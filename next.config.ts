@@ -12,20 +12,9 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
   },
-  {
-    key: "Content-Security-Policy",
-    value: [
-      "default-src 'self'",
-      "script-src 'self'",
-      "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https:",
-      "font-src 'self' data:",
-      "connect-src 'self'",
-      "frame-ancestors 'none'",
-      "base-uri 'self'",
-      "form-action 'self'",
-    ].join("; "),
-  },
+  // Content-Security-Policy is set per-request in src/proxy.ts with a fresh
+  // nonce, so Next.js's inline hydration scripts can execute under a strict
+  // script-src (no 'unsafe-inline').
 ];
 
 const nextConfig: NextConfig = {
