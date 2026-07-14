@@ -122,6 +122,7 @@
   }
   .bg-navy h2, .bg-navy h3 { @apply text-white; }
   .bg-navy p { color: #C9D4E6; }
+  .bg-navy .spec-list li { color: #C9D4E6; }
   .bg-gray { @apply bg-ink-100; }
 
   /* ---------- Buttons ---------- */
@@ -203,13 +204,16 @@
   }
   .hero-media {
     @apply absolute inset-0 z-0;
-    background: linear-gradient(135deg, rgba(11,28,58,0.92) 0%, rgba(15,58,115,0.85) 55%, rgba(20,84,153,0.78) 100%);
+  }
+  .hero-media::after {
+    content: ""; @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(135deg, rgba(11,28,58,0.72) 0%, rgba(15,58,115,0.58) 55%, rgba(20,84,153,0.4) 100%);
   }
   .hero-media img { @apply object-cover transition-opacity duration-500; }
   .bolt-glow {
     @apply absolute pointer-events-none animate-float z-1;
     right: -10%; top: -10%; width: 60%; height: 130%;
-    background: radial-gradient(circle at 60% 40%, rgba(228,35,28,0.32), transparent 60%);
+    background: radial-gradient(circle at 60% 40%, rgba(228,35,28,0.16), transparent 60%);
   }
   .bolt-glow::after {
     content: ""; @apply absolute inset-0;
@@ -380,6 +384,7 @@
     background: radial-gradient(120% 100% at 0% 0%, #1B2130, transparent 60%), var(--color-ink-900);
   }
   footer h4 { @apply text-white text-base mb-4.5; }
+  footer p { color: #B9BFCC; }
   .foot-grid { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr] gap-10; }
   footer a { color: #B9BFCC; @apply transition-colors duration-200; }
   footer a:hover { @apply text-white; }
