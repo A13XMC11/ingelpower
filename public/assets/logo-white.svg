@@ -1,6 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-label="INGELPOWER - Energía que trasciende">
   <rect x="4" y="10" width="100" height="100" rx="18" fill="#FFFFFF" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2"/>
-  <path d="M60 24 L30 66 H48 L38 96 L76 52 H56 Z" fill="#FFFFFF"/>
+  <g transform="translate(4,10) scale(0.25)">
+    <g transform="translate(-0.033476,389.000000) scale(0.1,-0.1)" fill="#FFFFFF">
+      <path d="M3170 3361 c-47 -21 -112 -55 -144 -75 -33 -20 -85 -45 -115 -57 -31
+      -11 -77 -34 -102 -50 -25 -16 -74 -41 -108 -54 -34 -14 -86 -41 -114 -60 -29
+      -18 -82 -46 -119 -60 -52 -21 -77 -38 -106 -74 -70 -84 -75 -94 -61 -139 20
+      -68 -44 -144 -281 -337 -21 -16 -162 -138 -314 -270 -152 -132 -302 -261 -334
+      -287 -201 -168 -195 -226 24 -238 185 -10 197 -42 62 -156 -45 -38 -181 -159
+      -302 -269 -122 -110 -303 -271 -403 -358 -387 -337 -409 -326 642 -327 904 0
+      852 -9 945 172 23 46 48 90 55 98 8 8 30 49 51 90 20 41 50 94 66 118 16 23
+      41 68 55 100 15 31 38 75 53 97 15 22 43 72 63 111 20 39 50 92 67 117 16 25
+      30 49 30 54 0 5 21 42 46 83 25 41 60 102 76 135 17 33 41 74 53 90 13 17 37
+      60 53 97 17 37 42 82 55 100 14 18 41 65 59 103 19 39 45 88 58 110 48 85 8
+      125 -137 136 -150 11 -181 64 -99 172 18 24 49 68 68 98 84 131 142 159 335
+      159 199 0 250 69 169 228 -14 29 -42 101 -62 161 -70 218 -125 254 -284 182z"/>
+    </g>
+  </g>
   <text x="122" y="70" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="52" letter-spacing="0.5" fill="#FFFFFF">INGELPOWER</text>
   <text x="124" y="96" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="20" fill="#C9D4E6">Energía que trasciende</text>
 </svg>
