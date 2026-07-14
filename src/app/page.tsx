@@ -34,7 +34,7 @@ const slides: HeroSlide[] = [
       </>
     ),
     lead: "Sistemas de puesta a tierra, acometidas de socorro 25kV y tableros de transferencia automática en las 15 estaciones, bajo estándares europeos de ACCIONA España.",
-    image: "/assets/obreros_caja.webp",
+    image: "/assets/inicio-proyecto-metro.webp",
   },
   {
     tag: "Confían en nosotros",
@@ -79,14 +79,7 @@ export default function HomePage() {
       <section>
         <div className="container split">
           <Reveal>
-            <IndustrialPlate
-              minHeight={420}
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.4}>
-                  <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" fill="rgba(255,255,255,0.14)" />
-                </svg>
-              }
-            />
+            <IndustrialPlate minHeight={420} image="/assets/inicio-quienes-somos.webp" imageAlt="Equipo INGELPOWER en planta" />
           </Reveal>
           <div>
             <div className="eyebrow">Quiénes somos</div>
@@ -242,14 +235,7 @@ export default function HomePage() {
       <section className="bg-navy">
         <div className="container split reverse">
           <Reveal>
-            <IndustrialPlate
-              minHeight={380}
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
-                  <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
-                </svg>
-              }
-            />
+            <IndustrialPlate minHeight={380} image="/assets/inicio-proyecto-metro.webp" imageAlt="Metro de Quito" />
           </Reveal>
           <div>
             <div className="eyebrow">Proyecto icono</div>

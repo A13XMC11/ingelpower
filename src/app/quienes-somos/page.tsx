@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { IndustrialPlate } from "@/components/industrial-plate";
 import { Reveal } from "@/components/reveal";
@@ -33,15 +34,7 @@ export default function QuienesSomosPage() {
             </p>
           </div>
           <Reveal>
-            <IndustrialPlate
-              minHeight={320}
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
-                  <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />
-                  <circle cx="12" cy="12" r="4" />
-                </svg>
-              }
-            />
+            <IndustrialPlate minHeight={320} image="/assets/quienes-proposito.webp" imageAlt="Nuestro propósito" />
           </Reveal>
         </div>
       </section>
@@ -94,6 +87,14 @@ export default function QuienesSomosPage() {
           <div className="eyebrow">Qué nos hace diferentes</div>
           <h2>Apoyo paso a paso, en cada etapa de su proyecto</h2>
           <p className="lead">Le acompañamos desde el diseño inicial hasta la puesta en marcha de su proyecto.</p>
+          <Reveal>
+            <IndustrialPlate
+              minHeight={240}
+              className="mt-9"
+              image="/assets/quienes-apoyo-paso-a-paso.webp"
+              imageAlt="Apoyo paso a paso en cada etapa del proyecto"
+            />
+          </Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 process-grid mt-10">
             <Reveal delay={0} className="process-step">
               <h4>Ingeniería</h4>
@@ -117,7 +118,10 @@ export default function QuienesSomosPage() {
 
       <section>
         <div className="container grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.2fr] gap-7">
-          <Reveal delay={0} className="card">
+          <Reveal delay={0} className="card overflow-hidden">
+            <div className="relative -mx-8 -mt-8 mb-5 h-40">
+              <Image src="/assets/quienes-asistencia-tecnica.webp" alt="Asistencia en todo momento" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            </div>
             <div className="icon-box">
               <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6}>
                 <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
@@ -130,7 +134,10 @@ export default function QuienesSomosPage() {
               en línea cuando lo necesite, mucho más allá de la ejecución del proyecto.
             </p>
           </Reveal>
-          <Reveal delay={1} className="card">
+          <Reveal delay={1} className="card overflow-hidden">
+            <div className="relative -mx-8 -mt-8 mb-5 h-40">
+              <Image src="/assets/quienes-expedientes.webp" alt="Entrega de expedientes" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            </div>
             <div className="icon-box">
               <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6}>
                 <path d="M4 4h16v16H4z" />
@@ -143,7 +150,10 @@ export default function QuienesSomosPage() {
               estudios, catálogos, planos, informes y registros.
             </p>
           </Reveal>
-          <Reveal delay={2} className="card featured">
+          <Reveal delay={2} className="card featured overflow-hidden">
+            <div className="relative -mx-8 -mt-8 mb-5 h-40">
+              <Image src="/assets/quienes-garantia-calidad.webp" alt="Garantía de calidad" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            </div>
             <div className="icon-box">
               <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6}>
                 <path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5z" />
@@ -161,15 +171,7 @@ export default function QuienesSomosPage() {
       <section className="bg-gray section-tight">
         <div className="container split reverse">
           <Reveal>
-            <IndustrialPlate
-              minHeight={280}
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
-                  <path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" />
-                  <path d="M14 3v5h5" />
-                </svg>
-              }
-            />
+            <IndustrialPlate minHeight={280} image="/assets/quienes-capacitacion.webp" imageAlt="Charlas de capacitación" />
           </Reveal>
           <div>
             <div className="eyebrow">Charlas de capacitación</div>

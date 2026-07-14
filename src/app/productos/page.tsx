@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { productos } from "@/data/productos";
@@ -31,7 +32,16 @@ export default function ProductosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {productos.map((producto, i) => (
               <Reveal key={producto.slug} delay={i % 3}>
-                <Link href={`/productos/${producto.slug}`} className="card featured h-full flex flex-col">
+                <Link href={`/productos/${producto.slug}`} className="card featured h-full flex flex-col overflow-hidden">
+                  <div className="relative -mx-8 -mt-8 mb-5 h-44">
+                    <Image
+                      src={producto.image}
+                      alt={producto.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="icon-box">{producto.icon}</div>
                   {producto.flag ? <span className="detail-flag">{producto.flag}</span> : null}
                   <h3>{producto.title}</h3>

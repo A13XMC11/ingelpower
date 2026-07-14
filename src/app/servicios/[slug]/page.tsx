@@ -66,7 +66,12 @@ export default async function ServicioDetailPage({ params }: ServicioPageProps) 
                     <p className="mt-4.5 text-[.9rem] text-ink-500">{servicio.note}</p>
                   ) : null}
                 </div>
-                <IndustrialPlate minHeight={servicio.minHeight ?? 280} icon={servicio.icon} />
+                <IndustrialPlate
+                  minHeight={servicio.minHeight ?? 280}
+                  image={servicio.image}
+                  imageAlt={servicio.title}
+                  icon={servicio.image ? undefined : servicio.icon}
+                />
               </div>
             </Reveal>
           </div>

@@ -70,7 +70,12 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
                     ))}
                   </div>
                 </div>
-                <IndustrialPlate minHeight={producto.minHeight ?? 280} icon={producto.icon} />
+                <IndustrialPlate
+                  minHeight={producto.minHeight ?? 280}
+                  image={producto.image}
+                  imageAlt={producto.title}
+                  icon={producto.image ? undefined : producto.icon}
+                />
               </div>
             </Reveal>
           </div>

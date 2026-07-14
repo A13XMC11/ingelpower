@@ -9,6 +9,7 @@ export interface ServicioItem {
   specs: string[];
   note?: string;
   icon: ReactNode;
+  image: string;
   minHeight?: number;
 }
 
@@ -27,6 +28,7 @@ export const servicios: ServicioItem[] = [
       "Certificación con equipo de medición toque y paso (Metrel)",
     ],
     note: "Caso destacado: suministro y montaje de malla a tierra para las estaciones del Metro de Quito, bajo diseños de ACCIONA España.",
+    image: "/assets/servicio-mallas-tierra.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -47,6 +49,7 @@ export const servicios: ServicioItem[] = [
       "Bancos de condensadores para compensación reactiva",
       "Equipamiento explosion proof para áreas clasificadas",
     ],
+    image: "/assets/servicio-tableros-electricos.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -68,6 +71,7 @@ export const servicios: ServicioItem[] = [
       "Corrección electrónica con equipos SVG (Circutor)",
       "Filtrado de armónicos con equipos AFQ (Circutor)",
     ],
+    image: "/assets/servicio-factor-potencia.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -88,6 +92,7 @@ export const servicios: ServicioItem[] = [
       "Cámaras de transformación y redes de media voltaje",
       "Variadores de medio voltaje y arrancadores",
     ],
+    image: "/assets/servicio-media-tension.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -107,6 +112,7 @@ export const servicios: ServicioItem[] = [
       "Soterramiento de cables y cajas pad mounted",
       "Reubicación de transformadores",
     ],
+    image: "/assets/servicio-acometidas.webp",
     minHeight: 240,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -125,6 +131,7 @@ export const servicios: ServicioItem[] = [
       "Medidor de toque y paso",
       "Soporte técnico durante la medición",
     ],
+    image: "/assets/servicio-equipos-medicion.webp",
     minHeight: 240,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>

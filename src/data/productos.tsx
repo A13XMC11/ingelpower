@@ -14,6 +14,7 @@ export interface ProductoItem {
   specs: string[];
   brands: ProductoBrand[];
   icon: ReactNode;
+  image: string;
   minHeight?: number;
 }
 
@@ -36,6 +37,7 @@ export const productos: ProductoItem[] = [
       { name: "NEXANS" },
       { name: "GENERAL CABLE" },
     ],
+    image: "/assets/producto-cables-especiales.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -56,6 +58,7 @@ export const productos: ProductoItem[] = [
       "Tableros MCC integrados",
     ],
     brands: [{ name: "SIEMENS" }],
+    image: "/assets/producto-automatizacion.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -78,6 +81,7 @@ export const productos: ProductoItem[] = [
       "Analizadores de calidad de energía",
     ],
     brands: [{ name: "FLUKE" }],
+    image: "/assets/producto-instrumentos-medicion.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -100,6 +104,7 @@ export const productos: ProductoItem[] = [
       "Ideal para plantas industriales y centros de datos",
     ],
     brands: [{ name: "WETOWN", important: true }],
+    image: "/assets/producto-ducto-barras.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -121,6 +126,7 @@ export const productos: ProductoItem[] = [
       "Ideal para cargas variables e industriales",
     ],
     brands: [{ name: "CIRCUTOR" }],
+    image: "/assets/producto-svg.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -141,6 +147,7 @@ export const productos: ProductoItem[] = [
       "Compatible con cargas industriales variables",
     ],
     brands: [{ name: "CIRCUTOR" }],
+    image: "/assets/producto-afq.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>

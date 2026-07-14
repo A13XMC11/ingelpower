@@ -117,12 +117,8 @@ export default function ContactoPage() {
           <IndustrialPlate
             minHeight={320}
             className="rounded-2xl"
-            icon={
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.2}>
-                <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" />
-                <circle cx="12" cy="9" r="2.5" />
-              </svg>
-            }
+            image="/assets/contacto-fondo-industrial.webp"
+            imageAlt="Planta industrial INGELPOWER"
           />
         </div>
       </section>

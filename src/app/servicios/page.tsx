@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { servicios } from "@/data/servicios";
@@ -31,7 +32,16 @@ export default function ServiciosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {servicios.map((servicio, i) => (
               <Reveal key={servicio.slug} delay={i % 3}>
-                <Link href={`/servicios/${servicio.slug}`} className="card featured h-full flex flex-col">
+                <Link href={`/servicios/${servicio.slug}`} className="card featured h-full flex flex-col overflow-hidden">
+                  <div className="relative -mx-8 -mt-8 mb-5 h-44">
+                    <Image
+                      src={servicio.image}
+                      alt={servicio.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="icon-box">{servicio.icon}</div>
                   {servicio.flag ? <span className="detail-flag">{servicio.flag}</span> : null}
                   <h3>{servicio.title}</h3>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { IndustrialPlate } from "@/components/industrial-plate";
 import { StatCounter } from "@/components/stat-counter";
@@ -16,6 +17,7 @@ const projects = [
     name: "Sherwin Williams (Pinturas Cóndor)",
     text: "Sistema de iluminación completa y montajes electromecánicos bajo normativa Clase 1 División 1. Tableros MCC 220V SIEMENS.",
     amount: "$800.000",
+    image: "/assets/proyecto-sherwin-williams.webp",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <path d="M4 21V9l8-6 8 6v12" />
@@ -28,6 +30,7 @@ const projects = [
     name: "Gas Green",
     text: "Automatización y mejoramiento de sistema SCADA para planta de generación de 5 MVA con gas natural / biogás.",
     amount: "$370.000",
+    image: "/assets/proyecto-gas-green.webp",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <circle cx="12" cy="12" r="9" />
@@ -40,6 +43,7 @@ const projects = [
     name: "Ideal Alambrec",
     text: "Montaje de acometida de transformador 500 kVA y suministro/instalación de tablero 3WL de 2000 A.",
     amount: "$70.000",
+    image: "/assets/proyecto-ideal-alambrec.webp",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -52,6 +56,7 @@ const projects = [
     name: "UCEM",
     text: "Suministro, instalación y puesta en marcha de un variador de medio voltaje de 300 kW a 4.16 kV.",
     amount: "$300.000",
+    image: "/assets/proyecto-ucem.webp",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <path d="M3 21h18M6 21V9l3-3v15M13 21V5l3-3v19" />
@@ -63,6 +68,7 @@ const projects = [
     name: "Aymesa",
     text: "Fabricación y montaje del sistema eléctrico de la celda de soldadura para el modelo KIA Sportage.",
     amount: "$280.000",
+    image: "/assets/proyecto-aymesa.webp",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <circle cx="7" cy="17" r="2" />
@@ -76,9 +82,23 @@ const projects = [
     name: "Ferrero del Ecuador",
     text: "Reubicación de transformador de 750 kVA. Suministro y montaje de TDP, centros de carga y acometidas subterráneas.",
     amount: "$98.000",
+    image: "/assets/proyecto-ferrero.webp",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <path d="M12 3c3 3 5 6 5 9a5 5 0 0 1-10 0c0-3 2-6 5-9z" />
+      </svg>
+    ),
+  },
+  {
+    sector: "Industria papelera",
+    name: "Familia Sancela",
+    text: "Diseño y montaje del sistema eléctrico Flat Pack para la planta de producción de la papelera.",
+    amount: "$180.000",
+    image: "/assets/proyecto-familia-sancela.webp",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
+        <rect x="5" y="3" width="14" height="18" rx="1.5" />
+        <path d="M9 8h6M9 12h6M9 16h4" />
       </svg>
     ),
   },
@@ -157,17 +177,7 @@ export default function ProyectosPage() {
             </div>
           </div>
           <Reveal>
-            <IndustrialPlate
-              minHeight={420}
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.2}>
-                  <rect x="3" y="6" width="18" height="12" rx="3" />
-                  <circle cx="8" cy="18" r="1.4" />
-                  <circle cx="16" cy="18" r="1.4" />
-                  <path d="M6 10h12M6 13h12" />
-                </svg>
-              }
-            />
+            <IndustrialPlate minHeight={420} image="/assets/proyecto-metro-destacado.webp" imageAlt="Metro de Quito" />
           </Reveal>
         </div>
       </section>
@@ -181,7 +191,7 @@ export default function ProyectosPage() {
             {projects.map((project, i) => (
               <Reveal key={project.name} delay={i} className="project-card">
                 <div className="project-media industrial-plate">
-                  <div className="plate-icon">{project.icon}</div>
+                  <Image src={project.image} alt={project.name} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
                 </div>
                 <div className="project-body">
                   <div className="sector">{project.sector}</div>
