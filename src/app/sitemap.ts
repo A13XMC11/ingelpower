@@ -1,13 +1,31 @@
 import type { MetadataRoute } from "next";
 import { NAV_LINKS } from "@/lib/nav-links";
+import { servicios } from "@/data/servicios";
+import { productos } from "@/data/productos";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ingelpower.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return NAV_LINKS.map(({ href }) => ({
+  const navEntries: MetadataRoute.Sitemap = NAV_LINKS.map(({ href }) => ({
     url: `${SITE_URL}${href === "/" ? "" : href}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: href === "/" ? 1 : 0.7,
   }));
+
+  const servicioEntries: MetadataRoute.Sitemap = servicios.map(({ slug }) => ({
+    url: `${SITE_URL}/servicios/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  const productoEntries: MetadataRoute.Sitemap = productos.map(({ slug }) => ({
+    url: `${SITE_URL}/productos/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...navEntries, ...servicioEntries, ...productoEntries];
 }
