@@ -23,6 +23,16 @@
 # misc
 .DS_Store
 *.pem
+*.key
+*.p12
+*.pfx
+*.cer
+id_rsa*
+id_ed25519*
+credentials.json
+
+# large binaries not meant for version control
+*.pdf
 
 # debug
 npm-debug.log*
@@ -30,8 +40,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# playwright / browser testing artifacts
+.playwright-mcp/
+
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
