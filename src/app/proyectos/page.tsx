@@ -253,7 +253,7 @@ export default function ProyectosPage() {
 
       <section className="section-tight">
         <div className="container">
-          <div className="cta-banner">
+          <Reveal className="cta-banner">
             <div>
               <h2>Su próximo proyecto puede ser el siguiente caso de éxito.</h2>
               <p>Cuéntenos qué necesita y armemos juntos la propuesta técnica.</p>
@@ -261,7 +261,7 @@ export default function ProyectosPage() {
             <Link href="/contacto" className="btn btn-outline">
               Hablar con un especialista
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

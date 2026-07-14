@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IndustrialPlate } from "@/components/industrial-plate";
+import { Reveal } from "@/components/reveal";
 import { SideNav } from "@/components/side-nav";
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function ServiciosPage() {
           <SideNav title="Servicios" items={sideNavItems} />
 
           <div>
-            <div className="detail-block" id="mallas-a-tierra">
+            <Reveal className="detail-block" id="mallas-a-tierra">
               <span className="detail-flag">Servicio principal</span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <div>
@@ -69,9 +70,9 @@ export default function ServiciosPage() {
                   }
                 />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="tableros-electricos">
+            <Reveal className="detail-block" id="tableros-electricos">
               <span className="detail-flag">Servicio principal</span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <IndustrialPlate
@@ -99,9 +100,9 @@ export default function ServiciosPage() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="factor-potencia">
+            <Reveal className="detail-block" id="factor-potencia">
               <span className="detail-flag">Servicio principal</span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <div>
@@ -128,9 +129,9 @@ export default function ServiciosPage() {
                   }
                 />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="media-tension">
+            <Reveal className="detail-block" id="media-tension">
               <span className="detail-flag">Servicio principal</span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <IndustrialPlate
@@ -157,9 +158,9 @@ export default function ServiciosPage() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="acometidas">
+            <Reveal className="detail-block" id="acometidas">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <div>
                   <h2>Acometidas Eléctricas</h2>
@@ -183,9 +184,9 @@ export default function ServiciosPage() {
                   }
                 />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="alquiler-equipos">
+            <Reveal className="detail-block" id="alquiler-equipos">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <IndustrialPlate
                   minHeight={240}
@@ -210,14 +211,14 @@ export default function ServiciosPage() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       <section className="bg-navy section-tight">
         <div className="container">
-          <div className="cta-banner">
+          <Reveal className="cta-banner">
             <div>
               <h2>¿Necesita resolver un problema eléctrico crítico?</h2>
               <p>Cuéntenos su requerimiento y le proponemos la mejor solución técnica.</p>
@@ -225,7 +226,7 @@ export default function ServiciosPage() {
             <Link href="/contacto" className="btn btn-outline">
               Solicitar cotización
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

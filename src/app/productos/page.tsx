@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IndustrialPlate } from "@/components/industrial-plate";
+import { Reveal } from "@/components/reveal";
 import { SideNav } from "@/components/side-nav";
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default function ProductosPage() {
           <SideNav title="Productos" items={sideNavItems} />
 
           <div>
-            <div className="detail-block" id="cables">
+            <Reveal className="detail-block" id="cables">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <div>
                   <h2>Cables Eléctricos Especiales</h2>
@@ -71,9 +72,9 @@ export default function ProductosPage() {
                   }
                 />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="automatizacion">
+            <Reveal className="detail-block" id="automatizacion">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <IndustrialPlate
                   minHeight={280}
@@ -103,9 +104,9 @@ export default function ProductosPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="medicion">
+            <Reveal className="detail-block" id="medicion">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <div>
                   <h2>Instrumentos de Medición</h2>
@@ -133,9 +134,9 @@ export default function ProductosPage() {
                   }
                 />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="wetown">
+            <Reveal className="detail-block" id="wetown">
               <span className="detail-flag">Línea insignia</span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <IndustrialPlate
@@ -166,9 +167,9 @@ export default function ProductosPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="svg">
+            <Reveal className="detail-block" id="svg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <div>
                   <h2>SVG — Corrección de Factor de Potencia Electrónica</h2>
@@ -197,9 +198,9 @@ export default function ProductosPage() {
                   }
                 />
               </div>
-            </div>
+            </Reveal>
 
-            <div className="detail-block" id="afq">
+            <Reveal className="detail-block" id="afq">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
                 <IndustrialPlate
                   minHeight={280}
@@ -228,14 +229,14 @@ export default function ProductosPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       <section className="section-tight">
         <div className="container">
-          <div className="cta-banner">
+          <Reveal className="cta-banner">
             <div>
               <h2>¿Busca un producto específico para su planta?</h2>
               <p>Cuéntenos qué necesita y le enviamos disponibilidad, ficha técnica y cotización.</p>
@@ -243,7 +244,7 @@ export default function ProductosPage() {
             <Link href="/contacto" className="btn btn-outline">
               Solicitar cotización
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

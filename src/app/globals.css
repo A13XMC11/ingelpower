@@ -246,9 +246,10 @@
   .industrial-plate::before {
     content: ""; @apply absolute inset-0;
     background-image:
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 42px),
       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
       linear-gradient(0deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size: 26px 26px;
+    background-size: auto, 26px 26px, 26px 26px;
   }
   .industrial-plate::after {
     content: ""; @apply absolute inset-0;
