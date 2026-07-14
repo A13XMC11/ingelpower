@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
-import { IndustrialPlate } from "@/components/industrial-plate";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -114,12 +113,27 @@ export default function ContactoPage() {
 
       <section className="bg-gray section-tight">
         <div className="container">
-          <IndustrialPlate
-            minHeight={320}
-            className="rounded-2xl"
-            image="/assets/contacto-fondo-industrial.webp"
-            imageAlt="Planta industrial INGELPOWER"
-          />
+          <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-brand-xl)] ring-1 ring-white/10">
+            <iframe
+              src="https://www.google.com/maps?q=-0.1515661,-78.4765535&z=16&output=embed"
+              title="Ubicación de INGELPOWER en el mapa"
+              width="100%"
+              height="320"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p className="mt-3 text-sm">
+            <a
+              href="https://maps.app.goo.gl/mrqxWMfG56Tb6eVLA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:underline"
+            >
+              Ver ubicación en Google Maps
+            </a>
+          </p>
         </div>
       </section>
     </>
