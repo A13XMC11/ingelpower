@@ -18,7 +18,7 @@ export function CatalogSideNav({ title, items, activeHref }: CatalogSideNavProps
       <ul>
         {items.map((item) => (
           <li key={item.href}>
-            <Link href={item.href} className={item.href === activeHref ? "active" : ""}>
+            <Link href={item.href} scroll={false} className={item.href === activeHref ? "active" : ""}>
               {item.label}
             </Link>
           </li>

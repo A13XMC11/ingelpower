@@ -186,7 +186,7 @@ export default function HomePage() {
               </div>
               <h3>Ducto de Barras — WETOWN</h3>
               <p>Distribución de energía en alta densidad para plantas industriales. Nuestra línea insignia.</p>
-              <span className="tag">Ver catálogo →</span>
+              <Link href="/productos/wetown" className="tag">Ver catálogo →</Link>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-7">
               <Reveal delay={1} className="card featured">
@@ -197,7 +197,7 @@ export default function HomePage() {
                 </div>
                 <h3>Cables Eléctricos Especiales</h3>
                 <p>Instrumentación, armado, VFD y control. Marcas Okonite, Southwire, Nexans y General Cable.</p>
-                <span className="tag">Ver catálogo →</span>
+                <Link href="/productos/cables" className="tag">Ver catálogo →</Link>
               </Reveal>
               <Reveal delay={2} className="card featured">
                 <div className="icon-box">
@@ -208,7 +208,7 @@ export default function HomePage() {
                 </div>
                 <h3>Instrumentos de Medición — FLUKE</h3>
                 <p>Equipos de precisión para diagnóstico, mantenimiento y puesta en marcha eléctrica.</p>
-                <span className="tag">Ver catálogo →</span>
+                <Link href="/productos/medicion" className="tag">Ver catálogo →</Link>
               </Reveal>
             </div>
           </div>

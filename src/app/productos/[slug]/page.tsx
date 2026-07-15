@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { IndustrialPlate } from "@/components/industrial-plate";
 import { Reveal } from "@/components/reveal";
 import { CatalogSideNav } from "@/components/catalog-side-nav";
+import { CableItems } from "@/components/cable-items";
 import { getProducto, productos } from "@/data/productos";
 
 interface ProductoPageProps {
@@ -55,13 +56,9 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
           <div>
             <Reveal className="detail-block" id={producto.slug}>
               {producto.flag ? <span className="detail-flag">{producto.flag}</span> : null}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
+              {producto.items ? (
                 <div>
-                  <ul className="spec-list">
-                    {producto.specs.map((spec) => (
-                      <li key={spec}>{spec}</li>
-                    ))}
-                  </ul>
+                  <CableItems items={producto.items} />
                   <div className="brand-tags">
                     {producto.brands.map((brand) => (
                       <span key={brand.name} className={`brand-tag${brand.important ? " important" : ""}`}>
@@ -70,13 +67,30 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
                     ))}
                   </div>
                 </div>
-                <IndustrialPlate
-                  minHeight={producto.minHeight ?? 280}
-                  image={producto.image}
-                  imageAlt={producto.title}
-                  icon={producto.image ? undefined : producto.icon}
-                />
-              </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
+                  <div>
+                    <ul className="spec-list">
+                      {producto.specs?.map((spec) => (
+                        <li key={spec}>{spec}</li>
+                      ))}
+                    </ul>
+                    <div className="brand-tags">
+                      {producto.brands.map((brand) => (
+                        <span key={brand.name} className={`brand-tag${brand.important ? " important" : ""}`}>
+                          {brand.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <IndustrialPlate
+                    minHeight={producto.minHeight ?? 280}
+                    image={producto.image}
+                    imageAlt={producto.title}
+                    icon={producto.image ? undefined : producto.icon}
+                  />
+                </div>
+              )}
             </Reveal>
           </div>
         </div>
