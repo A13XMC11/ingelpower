@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel, type HeroSlide } from "@/components/hero-carousel";
 import { StatCounter } from "@/components/stat-counter";
@@ -33,7 +34,7 @@ const slides: HeroSlide[] = [
         3 años construyendo la <em>columna eléctrica</em> del Metro de Quito.
       </>
     ),
-    lead: "Sistemas de puesta a tierra, acometidas de socorro 25kV y tableros de transferencia automática en las 15 estaciones, bajo estándares europeos de ACCIONA España.",
+    lead: "Sistemas de mallas a tierra, acometidas de socorro 25kV y tableros de transferencia automática en las 15 estaciones, bajo estándares europeos de ACCIONA España.",
     image: "/assets/inicio-proyecto-metro.webp",
   },
   {
@@ -122,40 +123,40 @@ export default function HomePage() {
           <h2 className="max-w-[640px]">Servicios por los que nos destacamos</h2>
           <p className="lead">
             Especialistas en los sistemas eléctricos más exigentes de la industria: desde la
-            puesta a tierra hasta la media tensión.
+            mallas a tierra hasta la media tensión.
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
             <Reveal delay={0} className="service-card">
               <span className="num">01</span>
-              <h3>Sistemas de Mallas a Tierra</h3>
-              <p>
-                Diseño, suministro y montaje de sistemas de puesta a tierra bajo estándares
-                internacionales, con certificación mediante equipo de medición toque y paso.
-              </p>
-            </Reveal>
-            <Reveal delay={1} className="service-card">
-              <span className="num">02</span>
-              <h3>Tableros Eléctricos y Banco de Condensadores</h3>
-              <p>
-                Fabricación e instalación de tableros MCC, de transferencia automática y bancos
-                de condensadores para optimizar su sistema eléctrico.
-              </p>
-            </Reveal>
-            <Reveal delay={2} className="service-card">
-              <span className="num">03</span>
-              <h3>Corrección de Factor de Potencia</h3>
-              <p>
-                Evite multas por bajo factor de potencia con soluciones de compensación reactiva
-                a la medida de su planta.
-              </p>
-            </Reveal>
-            <Reveal delay={3} className="service-card">
-              <span className="num">04</span>
               <h3>Proyectos de Media Tensión</h3>
               <p>
                 Ingeniería, procura y construcción de celdas, acometidas y redes de media tensión
                 con personal calificado.
+              </p>
+            </Reveal>
+            <Reveal delay={1} className="service-card">
+              <span className="num">02</span>
+              <h3>Sistemas de Mallas a Tierra</h3>
+              <p>
+                Diseño, suministro y montaje de sistemas de mallas a tierra bajo estándares
+                internacionales, con certificación mediante equipo de medición toque y paso.
+              </p>
+            </Reveal>
+            <Reveal delay={2} className="service-card">
+              <span className="num">03</span>
+              <h3>Tableros Eléctricos</h3>
+              <p>
+                Fabricación e instalación de tableros MCC, de distribución y de transferencia
+                automática para optimizar su sistema eléctrico.
+              </p>
+            </Reveal>
+            <Reveal delay={3} className="service-card">
+              <span className="num">04</span>
+              <h3>Corrección de Factor de Potencia</h3>
+              <p>
+                Evite multas por bajo factor de potencia con soluciones de compensación reactiva
+                a la medida de su planta.
               </p>
             </Reveal>
           </div>
@@ -176,41 +177,59 @@ export default function HomePage() {
             automatización, medición y corrección de energía.
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-7 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
             <Reveal delay={0} className="card featured">
-              <div className="icon-box">
-                <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6}>
-                  <rect x="4" y="4" width="16" height="16" rx="2" />
-                  <path d="M9 9h6v6H9z" />
-                </svg>
+              <div className="card-image">
+                <Image
+                  src="/assets/producto-ducto-barras.webp"
+                  alt="Ducto de Barras WETOWN"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
               </div>
               <h3>Ducto de Barras — WETOWN</h3>
               <p>Distribución de energía en alta densidad para plantas industriales. Nuestra línea insignia.</p>
               <Link href="/productos/wetown" className="tag">Ver catálogo →</Link>
             </Reveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-7">
-              <Reveal delay={1} className="card featured">
-                <div className="icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6}>
-                    <path d="M4 8h16M4 16h16M8 4v16M16 4v16" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <h3>Cables Eléctricos Especiales</h3>
-                <p>Instrumentación, armado, VFD y control. Marcas Okonite, Southwire, Nexans y General Cable.</p>
-                <Link href="/productos/cables" className="tag">Ver catálogo →</Link>
-              </Reveal>
-              <Reveal delay={2} className="card featured">
-                <div className="icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6}>
-                    <circle cx="12" cy="12" r="8" />
-                    <path d="M12 8v4l3 2" />
-                  </svg>
-                </div>
-                <h3>Instrumentos de Medición — FLUKE</h3>
-                <p>Equipos de precisión para diagnóstico, mantenimiento y puesta en marcha eléctrica.</p>
-                <Link href="/productos/medicion" className="tag">Ver catálogo →</Link>
-              </Reveal>
-            </div>
+            <Reveal delay={1} className="card featured">
+              <div className="card-image">
+                <Image
+                  src="/assets/producto-cables-especiales.webp"
+                  alt="Cables Eléctricos Especiales"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <h3>Cables Eléctricos Especiales</h3>
+              <p>Instrumentación, armado, VFD y control. Marcas Okonite, Southwire, Nexans y General Cable.</p>
+              <Link href="/productos/cables" className="tag">Ver catálogo →</Link>
+            </Reveal>
+            <Reveal delay={2} className="card featured">
+              <div className="card-image">
+                <Image
+                  src="/assets/producto-instrumentos-medicion.webp"
+                  alt="Instrumentos de Medición FLUKE"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <h3>Instrumentos de Medición — FLUKE</h3>
+              <p>Equipos de precisión para diagnóstico, mantenimiento y puesta en marcha eléctrica.</p>
+              <Link href="/productos/medicion" className="tag">Ver catálogo →</Link>
+            </Reveal>
+            <Reveal delay={3} className="card featured">
+              <div className="card-image">
+                <Image
+                  src="/assets/producto-automatizacion.webp"
+                  alt="Automatización Industrial SIEMENS"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <h3>Automatización Industrial — SIEMENS</h3>
+              <p>PLC, variadores de frecuencia y sistemas SCADA integrados para el control total de su proceso.</p>
+              <Link href="/productos/automatizacion" className="tag">Ver catálogo →</Link>
+            </Reveal>
           </div>
           <div className="btn-row">
             <Link href="/productos" className="btn btn-blue">
@@ -242,13 +261,12 @@ export default function HomePage() {
             <h2>Metro de Quito — 3 años de trabajo continuo</h2>
             <p>
               Nuestro esfuerzo en el corazón de los quiteños: armado y montaje del sistema de
-              puesta a tierra (SPT) en diversas estaciones y pozos, suministro e instalación de
+              mallas a tierra (SPT) en diversas estaciones y pozos, suministro e instalación de
               acometidas eléctricas de socorro 25kV y tableros de transferencia automática en las
-              15 estaciones del Metro de Quito, bajo diseños y estándares europeos de ACCIONA
-              España.
+              15 estaciones del Metro de Quito.
             </p>
             <ul className="spec-list grid-cols-1">
-              <li>Sistema de puesta a tierra en estaciones y pozos</li>
+              <li>Sistema de mallas a tierra en estaciones y pozos</li>
               <li>Acometidas de socorro 25kV en las 15 estaciones</li>
               <li>Tableros de transferencia automática por estación</li>
               <li>Certificación mediante equipo de medición toque y paso (Metrel)</li>

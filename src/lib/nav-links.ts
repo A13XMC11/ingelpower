@@ -21,9 +21,9 @@ export const FOOTER_NAV_LINKS: NavLink[] = [
 ];
 
 export const FOOTER_SERVICE_LINKS: NavLink[] = [
+  { href: "/servicios#media-tension", label: "Media tensión" },
   { href: "/servicios#mallas-a-tierra", label: "Mallas a tierra" },
   { href: "/servicios#tableros-electricos", label: "Tableros eléctricos" },
   { href: "/servicios#factor-potencia", label: "Factor de potencia" },
-  { href: "/servicios#media-tension", label: "Media tensión" },
   { href: "/servicios#acometidas", label: "Acometidas eléctricas" },
 ];

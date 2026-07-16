@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 
@@ -80,6 +81,17 @@ export default function ContactoPage() {
                 <h5>Horario de atención</h5>
                 <p>Lunes a viernes, 8:00 – 17:00</p>
               </div>
+            </div>
+
+            <div className="mt-7.5 overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[var(--shadow-brand-xl)]">
+              <Image
+                src="/assets/contacto-ubicacion.png"
+                alt="Ubicación de las oficinas de INGELPOWER"
+                width={1086}
+                height={1448}
+                className="h-full w-full object-cover"
+                sizes="(min-width: 1024px) 380px, 90vw"
+              />
             </div>
 
             <div className="social-row mt-7.5">

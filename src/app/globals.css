@@ -283,6 +283,13 @@
   }
   .card:hover .icon-box { @apply scale-105 shadow-[var(--shadow-glow-blue)]; }
   .card .icon-box svg { @apply w-7 h-7 stroke-blue-700; }
+  .card .card-image {
+    @apply relative w-full h-44 rounded-xl overflow-hidden mb-5 bg-ink-100;
+  }
+  .card .card-image img {
+    @apply object-cover transition-transform duration-300 ease-[var(--ease-out)];
+  }
+  .card:hover .card-image img { @apply scale-105; }
   .card h3 { @apply text-[1.15rem] mb-2.5; }
   .card p { @apply text-[.95rem] mb-0; }
   .card .tag { @apply inline-flex items-center gap-1 mt-3.5 text-xs font-bold uppercase tracking-[.06em] text-red-600 transition-transform duration-300; }

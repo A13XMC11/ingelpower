@@ -58,7 +58,7 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
               {producto.flag ? <span className="detail-flag">{producto.flag}</span> : null}
               {producto.items ? (
                 <div>
-                  <CableItems items={producto.items} />
+                  <CableItems productoSlug={producto.slug} items={producto.items} />
                   <div className="brand-tags">
                     {producto.brands.map((brand) => (
                       <span key={brand.name} className={`brand-tag${brand.important ? " important" : ""}`}>
@@ -68,11 +68,21 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
                   </div>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-9 items-center">
+                  <div>
+                    <h2 className="mb-2">{producto.title}</h2>
+                    <p className="lead text-ink-800 mb-6">{producto.pitch ?? producto.summary}</p>
+                    <IndustrialPlate
+                      minHeight={340}
+                      image={producto.image}
+                      imageAlt={producto.title}
+                      icon={producto.image ? undefined : producto.icon}
+                    />
+                  </div>
                   <div>
                     <ul className="spec-list">
-                      {producto.specs?.map((spec) => (
-                        <li key={spec}>{spec}</li>
+                      {[...(producto.specs ?? []), ...(producto.applications ?? [])].map((point) => (
+                        <li key={point}>{point}</li>
                       ))}
                     </ul>
                     <div className="brand-tags">
@@ -83,30 +93,20 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
                       ))}
                     </div>
                   </div>
-                  <IndustrialPlate
-                    minHeight={producto.minHeight ?? 280}
-                    image={producto.image}
-                    imageAlt={producto.title}
-                    icon={producto.image ? undefined : producto.icon}
-                  />
                 </div>
               )}
             </Reveal>
-          </div>
-        </div>
-      </section>
 
-      <section className="section-tight">
-        <div className="container">
-          <Reveal className="cta-banner">
-            <div>
-              <h2>¿Busca un producto específico para su planta?</h2>
-              <p>Cuéntenos qué necesita y le enviamos disponibilidad, ficha técnica y cotización.</p>
-            </div>
-            <Link href="/contacto" className="btn btn-outline">
-              Solicitar cotización
-            </Link>
-          </Reveal>
+            <Reveal className="cta-banner">
+              <div>
+                <h2>¿Necesita {producto.title.toLowerCase()}?</h2>
+                <p>Cuéntenos las condiciones de su proyecto y le enviamos disponibilidad, ficha técnica y cotización.</p>
+              </div>
+              <Link href="/contacto" className="btn btn-outline">
+                Solicitar cotización
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>

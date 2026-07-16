@@ -83,7 +83,7 @@ export function ContactForm() {
         <label htmlFor="interest">Me interesa</label>
         <select id="interest" name="interest">
           <option>Servicio de mallas a tierra</option>
-          <option>Tableros eléctricos / banco de condensadores</option>
+          <option>Tableros eléctricos</option>
           <option>Corrección de factor de potencia</option>
           <option>Proyecto de media tensión</option>
           <option>Acometidas eléctricas</option>

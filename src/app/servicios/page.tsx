@@ -7,7 +7,7 @@ import { servicios } from "@/data/servicios";
 export const metadata: Metadata = {
   title: "Servicios | Mallas a Tierra, Tableros, Factor de Potencia y Media Tensión",
   description:
-    "Catálogo de servicios INGELPOWER: sistemas de mallas a tierra, tableros eléctricos y banco de condensadores, corrección de factor de potencia, proyectos de media tensión, acometidas eléctricas y alquiler de equipos de medición.",
+    "Catálogo de servicios INGELPOWER: sistemas de mallas a tierra, tableros eléctricos, corrección de factor de potencia, proyectos de media tensión, acometidas eléctricas y alquiler de equipos de medición.",
 };
 
 export default function ServiciosPage() {
@@ -33,7 +33,7 @@ export default function ServiciosPage() {
             {servicios.map((servicio, i) => (
               <Reveal key={servicio.slug} delay={i % 3}>
                 <Link href={`/servicios/${servicio.slug}`} className="card featured h-full flex flex-col overflow-hidden">
-                  <div className="relative -mx-8 -mt-8 mb-5 h-44">
+                  <div className={`relative -mx-8 -mt-8 mb-5 ${servicio.cardImageClass ?? "h-44"}`}>
                     <Image
                       src={servicio.image}
                       alt={servicio.title}

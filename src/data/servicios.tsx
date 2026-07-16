@@ -10,17 +10,42 @@ export interface ServicioItem {
   note?: string;
   icon: ReactNode;
   image: string;
+  cardImageClass?: string;
   minHeight?: number;
 }
 
 export const servicios: ServicioItem[] = [
   {
+    slug: "media-tension",
+    title: "Proyectos de Media Tensión",
+    flag: "Servicio principal",
+    summary:
+      "Proyectos integrales de media tensión: desde el diseño eléctrico hasta el comisionamiento.",
+    lead: "La media tensión no admite improvisación: un error en la coordinación de protecciones puede dejar sin suministro a una planta entera o dañar un transformador de $200,000 en segundos. INGELPOWER ejecuta proyectos integrales de 15kV, 17.5kV y 25kV — desde la ingeniería básica con ETAP hasta el comisionamiento final — con personal certificado que ya lo hizo en el Metro de Quito (25kV, estándar europeo ACCIONA) y en el Aeropuerto del Coca, entre otros proyectos de infraestructura crítica en Ecuador.",
+    specs: [
+      "Celdas de media tensión 15kV, 17.5kV y 25kV (tecnología SF6 y vacío, marcas ABB, Schneider, Siemens)",
+      "Coordinación de protecciones con software ETAP: estudio de cortocircuito, arco eléctrico y selectividad",
+      "Soterramiento de cables de media tensión en ductos HDPE y cajas de derivación pad mounted",
+      "Cámaras de transformación y subestaciones en contenedor para zonas remotas o industriales",
+      "Variadores de medio voltaje y arrancadores a voltaje reducido para grandes motores",
+      "Comisionamiento con protocolo de pruebas de alta tensión, relés de protección y entrega de As-Built",
+    ],
+    image: "/assets/servicios-proyecto-media-tension.jpg",
+    cardImageClass: "aspect-[3/4]",
+    minHeight: 520,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
+        <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" />
+      </svg>
+    ),
+  },
+  {
     slug: "mallas-a-tierra",
     title: "Especialistas en Sistemas de Mallas a Tierra",
     flag: "Servicio principal",
     summary:
-      "Diseño, suministro y montaje de sistemas de puesta a tierra (SPT) certificados bajo estándares europeos.",
-    lead: "Una malla a tierra mal diseñada no es visible hasta que ocurre un accidente o una falla destruye equipos de cientos de miles de dólares. En INGELPOWER diseñamos, suministramos y montamos sistemas de puesta a tierra (SPT) bajo IEEE 80 y estándares europeos, calculados para que las tensiones de toque y paso nunca superen los límites seguros para las personas — y lo certificamos con equipo de medición propio. Lo ejecutamos en las 15 estaciones del Metro de Quito bajo los protocolos de ACCIONA España, y en plantas industriales de sectores petroquímico, automotriz y alimenticio.",
+      "Diseño, suministro y montaje de sistemas de mallas a tierra (SPT) certificados bajo estándares europeos.",
+    lead: "Una malla a tierra mal diseñada no es visible hasta que ocurre un accidente o una falla destruye equipos de cientos de miles de dólares. En INGELPOWER diseñamos, suministramos y montamos sistemas de mallas a tierra (SPT) bajo IEEE 80 y estándares europeos, calculados para que las tensiones de toque y paso nunca superen los límites seguros para las personas — y lo certificamos con equipo de medición propio. Lo ejecutamos en las 15 estaciones del Metro de Quito bajo los protocolos de ACCIONA España, y en plantas industriales de sectores petroquímico, automotriz y alimenticio.",
     specs: [
       "Medición de resistividad del suelo con equipo Metrel (método Wenner, 4 electrodos)",
       "Modelamiento y diseño de malla conforme a IEEE 80 y estándares europeos ACCIONA",
@@ -40,16 +65,15 @@ export const servicios: ServicioItem[] = [
   },
   {
     slug: "tableros-electricos",
-    title: "Tableros Eléctricos y Banco de Condensadores",
+    title: "Tableros Eléctricos",
     flag: "Servicio principal",
     summary:
-      "Fabricación y montaje de tableros de distribución, MCC y de transferencia automática, más bancos de condensadores.",
+      "Fabricación y montaje de tableros de distribución, MCC y de transferencia automática.",
     lead: "Un tablero fabricado sin ingeniería de respaldo es un riesgo que se descubre en el peor momento: cuando falla el suministro o se dispara una protección sin causa aparente. INGELPOWER fabrica tableros MCC, de transferencia automática y distribución bajo norma NEMA, con componentes Siemens, ABB y Schneider, y entrega dossier de calidad con planos As-Built, protocolos de prueba y memorias de cálculo. También fabricamos equipamiento explosion proof para áreas clasificadas según NEC y ATEX.",
     specs: [
       "Tableros MCC (Motor Control Center) bajo norma NEMA I, 12 y 4X con arrancadores suaves y variadores",
       "Tableros de transferencia automática (ATS) 4 polos hasta 2500A con lógica programable",
       "Tableros de distribución principal y secundaria para baja y media tensión",
-      "Bancos de condensadores automáticos para compensación de potencia reactiva",
       "Equipamiento explosion proof certificado para áreas clasificadas NEC/ATEX (petroquímica, minería)",
       "Entrega de dossier de calidad: planos As-Built, protocolos de prueba FAT y memoria de cálculo",
     ],
@@ -85,29 +109,6 @@ export const servicios: ServicioItem[] = [
     ),
   },
   {
-    slug: "media-tension",
-    title: "Proyectos de Media Tensión",
-    flag: "Servicio principal",
-    summary:
-      "Proyectos integrales de media tensión: desde el diseño eléctrico hasta el comisionamiento.",
-    lead: "La media tensión no admite improvisación: un error en la coordinación de protecciones puede dejar sin suministro a una planta entera o dañar un transformador de $200,000 en segundos. INGELPOWER ejecuta proyectos integrales de 15kV, 17.5kV y 25kV — desde la ingeniería básica con ETAP hasta el comisionamiento final — con personal certificado que ya lo hizo en el Metro de Quito (25kV, estándar europeo ACCIONA) y en el Aeropuerto del Coca, entre otros proyectos de infraestructura crítica en Ecuador.",
-    specs: [
-      "Celdas de media tensión 15kV, 17.5kV y 25kV (tecnología SF6 y vacío, marcas ABB, Schneider, Siemens)",
-      "Coordinación de protecciones con software ETAP: estudio de cortocircuito, arco eléctrico y selectividad",
-      "Soterramiento de cables de media tensión en ductos HDPE y cajas de derivación pad mounted",
-      "Cámaras de transformación y subestaciones en contenedor para zonas remotas o industriales",
-      "Variadores de medio voltaje y arrancadores a voltaje reducido para grandes motores",
-      "Comisionamiento con protocolo de pruebas de alta tensión, relés de protección y entrega de As-Built",
-    ],
-    image: "/assets/servicio-media-tension.webp",
-    minHeight: 280,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
-        <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" />
-      </svg>
-    ),
-  },
-  {
     slug: "acometidas",
     title: "Acometidas Eléctricas",
     summary:
@@ -133,7 +134,7 @@ export const servicios: ServicioItem[] = [
     title: "Alquiler de Equipos de Medición",
     summary:
       "Equipo especializado para mediciones y certificaciones de campo, con soporte técnico incluido.",
-    lead: "No siempre es necesario contratar un proyecto completo para obtener los datos que necesita. Si su empresa requiere certificar un sistema de puesta a tierra existente, medir la resistividad del suelo antes de diseñar una malla o verificar tensiones de toque y paso para cumplimiento normativo, INGELPOWER alquila el equipo especializado con soporte técnico incluido. El mismo equipo que usamos en nuestros proyectos, operado por personal capacitado o con guía para su propio equipo.",
+    lead: "No siempre es necesario contratar un proyecto completo para obtener los datos que necesita. Si su empresa requiere certificar un sistema de mallas a tierra existente, medir la resistividad del suelo antes de diseñar una malla o verificar tensiones de toque y paso para cumplimiento normativo, INGELPOWER alquila el equipo especializado con soporte técnico incluido. El mismo equipo que usamos en nuestros proyectos, operado por personal capacitado o con guía para su propio equipo.",
     specs: [
       "Telurómetro de cuatro hilos para medición de resistividad del suelo (método Wenner)",
       "Medidor de tensiones de toque y paso para certificación de SPT bajo IEEE 80",

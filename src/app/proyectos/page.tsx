@@ -105,7 +105,7 @@ const projects = [
 ];
 
 const experienceTable = [
-  ["Consorcio Línea 1 Metro de Quito", "Infraestructura urbana", "Sistema de puesta a tierra + acometidas de socorro 25kV", "$1.620.181,67"],
+  ["Consorcio Línea 1 Metro de Quito", "Infraestructura urbana", "Sistema de mallas a tierra + acometidas de socorro 25kV", "$1.620.181,67"],
   ["Consorcio Línea 1 Metro de Quito", "Infraestructura urbana", "Tableros de transferencia automática (15 estaciones)", "$171.126,07"],
   ["Sherwin Williams (Pinturas Cóndor)", "Petroquímica", "Iluminación anti-explosión + tableros MCC", "$800.000,00"],
   ["Gasgreen", "Energía renovable", "Cableado de media tensión y SCADA", "$370.000,00"],
@@ -160,7 +160,7 @@ export default function ProyectosPage() {
               diseños y estándares europeos.
             </p>
             <ul className="spec-list grid-cols-1">
-              <li>Armado y montaje del sistema de puesta a tierra (SPT) en diversas estaciones y pozos</li>
+              <li>Armado y montaje del sistema de mallas a tierra (SPT) en diversas estaciones y pozos</li>
               <li>Suministro e instalación de acometidas eléctricas de socorro 25kV en las 15 estaciones</li>
               <li>Provisión de tableros de transferencia automática para las 15 estaciones</li>
               <li>Certificación del óptimo funcionamiento del SPT con equipo de medición toque y paso (Metrel)</li>
