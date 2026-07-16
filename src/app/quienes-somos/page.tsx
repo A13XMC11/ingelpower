@@ -91,7 +91,7 @@ export default function QuienesSomosPage() {
             <IndustrialPlate
               minHeight={240}
               className="mt-9"
-              image="/assets/quienes-apoyo-paso-a-paso.webp"
+              image="/assets/imagen_apoyo_proyecto.webp"
               imageAlt="Apoyo paso a paso en cada etapa del proyecto"
             />
           </Reveal>

@@ -192,12 +192,6 @@
     @apply relative overflow-hidden text-white flex items-center;
     min-height: 660px;
   }
-  .hero::before {
-    content: ""; @apply absolute inset-0 pointer-events-none z-1;
-    background-image:
-      repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 42px),
-      repeating-linear-gradient(25deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 60px);
-  }
   .hero::after {
     content: ""; @apply absolute pointer-events-none left-0 right-0 -bottom-px h-24 z-1;
     background: linear-gradient(to bottom, transparent, rgba(11,42,86,0.25));
@@ -315,7 +309,11 @@
   /* ---------- Brand strip ---------- */
   .brand-strip { @apply bg-ink-100 py-8.5 relative overflow-hidden; }
   .brand-track { @apply flex items-center justify-between gap-7 flex-wrap; }
-  .brand-pill { @apply font-display font-extrabold tracking-[.03em] text-ink-700 text-[1.05rem] opacity-70 transition-[opacity,color,transform] duration-300 ease-[var(--ease-out)] hover:opacity-100 hover:text-blue-700 hover:-translate-y-0.5 cursor-default; }
+  .brand-pill {
+    @apply flex flex-col items-center gap-2.5 font-display font-extrabold tracking-[.03em] text-ink-700 text-[1.05rem] opacity-70 transition-[opacity,color,transform] duration-300 ease-[var(--ease-out)] hover:opacity-100 hover:text-blue-700 hover:-translate-y-0.5 cursor-default;
+  }
+  .brand-pill-logo { @apply w-[100px] h-10 object-contain grayscale opacity-80 transition-[filter,opacity] duration-300; }
+  .brand-pill:hover .brand-pill-logo { @apply grayscale-0 opacity-100; }
 
   /* ---------- Process steps ---------- */
   .process-grid { counter-reset: step; }

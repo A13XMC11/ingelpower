@@ -50,7 +50,7 @@ export const productos: ProductoItem[] = [
           "Cableado de entradas y salidas analógicas/digitales hacia PLC",
           "Tableros de control e instrumentación en plantas industriales",
         ],
-        image: "/assets/producto-cables-especiales.webp",
+        image: "/assets/cable-instrumentacion-blindado.webp",
         imageAlt: "Cable de instrumentación blindado",
       },
       {
@@ -64,7 +64,7 @@ export const productos: ProductoItem[] = [
           "Redes de distribución en plantas industriales",
           "Alimentadores principales entre subestaciones y tableros",
         ],
-        image: "/assets/producto-cables-especiales.webp",
+        image: "/assets/cable-armado-subterraneo.webp",
         imageAlt: "Cable armado para tendido subterráneo",
       },
       {
@@ -78,7 +78,7 @@ export const productos: ProductoItem[] = [
           "Instalaciones con alta interferencia electromagnética",
           "Protección del devanado del motor frente a picos de tensión",
         ],
-        image: "/assets/producto-cables-especiales.webp",
+        image: "/assets/cable-vfd-variadores-frecuencia.webp",
         imageAlt: "Cable VFD para variadores de frecuencia",
       },
       {
@@ -92,7 +92,7 @@ export const productos: ProductoItem[] = [
           "Mando y señalización de maquinaria industrial",
           "Líneas de producción con múltiples puntos de control",
         ],
-        image: "/assets/producto-cables-especiales.webp",
+        image: "/assets/cable-control-multiconductor.webp",
         imageAlt: "Cable de control multiconductor",
       },
     ],
@@ -164,7 +164,7 @@ export const productos: ProductoItem[] = [
       "Rutinas de mantenimiento predictivo con termografía durante paradas de planta programadas",
     ],
     brands: [{ name: "FLUKE" }],
-    image: "/assets/producto-instrumentos-medicion.webp",
+    image: "/assets/producto-instrumentos-medicion-fluke.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>

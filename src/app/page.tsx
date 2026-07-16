@@ -35,7 +35,7 @@ const slides: HeroSlide[] = [
       </>
     ),
     lead: "Sistemas de mallas a tierra, acometidas de socorro 25kV y tableros de transferencia automática en las 15 estaciones, bajo estándares europeos de ACCIONA España.",
-    image: "/assets/inicio-proyecto-metro.webp",
+    image: "/assets/metro-quito-presentacion.webp",
   },
   {
     tag: "Confían en nosotros",
@@ -47,7 +47,7 @@ const slides: HeroSlide[] = [
     ),
     title: "Arca Continental, Ferrero, Aymesa, Sherwin Williams y más.",
     lead: "Más de $6.6 millones de dólares en proyectos ejecutados en sectores petroquímico, automotriz, alimenticio, cementero y de infraestructura urbana.",
-    image: "/assets/obreros_caja.webp",
+    image: "/assets/presentacion-ferrero-sherwi.webp",
   },
 ];
 
@@ -207,10 +207,11 @@ export default function HomePage() {
             <Reveal delay={2} className="card featured">
               <div className="card-image">
                 <Image
-                  src="/assets/producto-instrumentos-medicion.webp"
+                  src="/assets/producto-instrumentos-medicion-fluke.webp"
                   alt="Instrumentos de Medición FLUKE"
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-top"
                 />
               </div>
               <h3>Instrumentos de Medición — FLUKE</h3>
@@ -242,9 +243,24 @@ export default function HomePage() {
       <div className="brand-strip">
         <div className="container">
           <div className="brand-track">
-            {["OKONITE", "SIEMENS", "FLUKE", "WETOWN", "CIRCUTOR", "NEXANS", "GENERAL CABLE"].map((brand) => (
-              <span key={brand} className="brand-pill">
-                {brand}
+            {[
+              { name: "OKONITE", logo: "/assets/okonite-logo.webp" },
+              { name: "SIEMENS", logo: "/assets/siemens-logo.svg" },
+              { name: "FLUKE", logo: "/assets/fluke-logo.webp" },
+              { name: "WETOWN", logo: "/assets/wetown-logo.webp" },
+              { name: "CIRCUTOR", logo: "/assets/circutor-logo.png" },
+              { name: "NEXANS", logo: "/assets/nexans-logo.webp" },
+              { name: "GENERAL CABLE", logo: "/assets/general-cable-logo.svg" },
+            ].map((brand) => (
+              <span key={brand.name} className="brand-pill">
+                {brand.name}
+                <Image
+                  src={brand.logo}
+                  alt={`Logo ${brand.name}`}
+                  width={110}
+                  height={40}
+                  className="brand-pill-logo"
+                />
               </span>
             ))}
           </div>

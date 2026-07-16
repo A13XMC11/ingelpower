@@ -4,6 +4,7 @@ interface IndustrialPlateProps {
   icon?: React.ReactNode;
   image?: string;
   imageAlt?: string;
+  imagePosition?: "center" | "top";
   minHeight?: number;
   className?: string;
   order?: "first" | "last";
@@ -13,6 +14,7 @@ export function IndustrialPlate({
   icon,
   image,
   imageAlt = "",
+  imagePosition = "center",
   minHeight = 260,
   className = "",
   order,
@@ -24,7 +26,13 @@ export function IndustrialPlate({
       style={{ minHeight }}
     >
       {image ? (
-        <Image src={image} alt={imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className={imagePosition === "top" ? "object-cover object-top" : "object-cover"}
+        />
       ) : null}
       {icon ? <div className="plate-icon">{icon}</div> : null}
     </div>

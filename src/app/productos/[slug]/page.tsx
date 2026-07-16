@@ -73,9 +73,10 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
                     <h2 className="mb-2">{producto.title}</h2>
                     <p className="lead text-ink-800 mb-6">{producto.pitch ?? producto.summary}</p>
                     <IndustrialPlate
-                      minHeight={340}
+                      minHeight={producto.slug === "medicion" ? 480 : 340}
                       image={producto.image}
                       imageAlt={producto.title}
+                      imagePosition={producto.slug === "medicion" ? "top" : "center"}
                       icon={producto.image ? undefined : producto.icon}
                     />
                   </div>

@@ -77,7 +77,7 @@ export const servicios: ServicioItem[] = [
       "Equipamiento explosion proof certificado para áreas clasificadas NEC/ATEX (petroquímica, minería)",
       "Entrega de dossier de calidad: planos As-Built, protocolos de prueba FAT y memoria de cálculo",
     ],
-    image: "/assets/servicio-tableros-electricos.webp",
+    image: "/assets/tablero-electrico.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -141,7 +141,7 @@ export const servicios: ServicioItem[] = [
       "Soporte técnico en campo durante la medición e interpretación de resultados",
       "Entrega de informe técnico con los valores medidos y comparación contra límites normativos",
     ],
-    image: "/assets/servicio-equipos-medicion.webp",
+    image: "/assets/alquiler-equipo-medicion-fluke.webp",
     minHeight: 240,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
