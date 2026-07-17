@@ -31,7 +31,6 @@ export const servicios: ServicioItem[] = [
       "Comisionamiento con protocolo de pruebas de alta tensión, relés de protección y entrega de As-Built",
     ],
     image: "/assets/servicios-proyecto-media-tension.jpg",
-    cardImageClass: "aspect-[3/4]",
     minHeight: 520,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
