@@ -15,7 +15,7 @@ const slides: HeroSlide[] = [
     ),
     title: (
       <>
-        Hago servicios y vendo productos especiales, <em>no para todo el mundo</em>.
+        Servicios especializados y productos de <em>alta gama</em>, para proyectos que no pueden fallar.
       </>
     ),
     lead: "En INGELPOWER diseñamos, procuramos y construimos soluciones eléctricas de media y baja tensión para la industria que no puede darse el lujo de fallar: mallas a tierra, tableros, corrección de factor de potencia y proyectos de alta exigencia técnica.",
