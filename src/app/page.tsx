@@ -35,7 +35,7 @@ const slides: HeroSlide[] = [
       </>
     ),
     lead: "Sistemas de mallas a tierra, acometidas de socorro 25kV y tableros de transferencia automática en las 15 estaciones, bajo estándares europeos de ACCIONA España.",
-    image: "/assets/metro-quito-presentacion.webp",
+    image: "/assets/metro-quito.webp",
   },
   {
     tag: "Confían en nosotros",

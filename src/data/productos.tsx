@@ -229,7 +229,7 @@ export const productos: ProductoItem[] = [
       "Plantas con variadores de frecuencia, donde un banco de condensadores tradicional arriesga resonancia",
     ],
     brands: [{ name: "CIRCUTOR" }],
-    image: "/assets/producto-svg.webp",
+    image: "/assets/correcion-factor-potencia-svg.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -260,7 +260,7 @@ export const productos: ProductoItem[] = [
       "Protección de bancos de condensadores existentes frente al riesgo de resonancia armónica",
     ],
     brands: [{ name: "CIRCUTOR" }],
-    image: "/assets/producto-afq.webp",
+    image: "/assets/filtro-armonicos-afqm.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>

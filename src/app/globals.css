@@ -532,7 +532,7 @@
   .spec-list { @apply grid grid-cols-1 sm:grid-cols-2 gap-2.5 gap-x-6 mt-5; }
   .spec-list li { @apply text-[.9rem] text-ink-700 pl-5.5 relative; }
   .spec-list li::before { content: "✓"; @apply absolute left-0 top-0 text-red-600 font-extrabold; }
-  .brand-tags { @apply flex flex-wrap gap-2.5 mt-4.5; }
+  .brand-tags { @apply flex flex-wrap gap-2.5 mt-4.5 mb-3; }
   .brand-tag { @apply bg-blue-100 text-blue-700 font-bold text-[.82rem] py-2 px-4 rounded-lg transition-transform duration-200 hover:-translate-y-0.5; }
   .brand-tag.important { @apply bg-red-600 text-white shadow-[var(--shadow-glow-red)]; }
 

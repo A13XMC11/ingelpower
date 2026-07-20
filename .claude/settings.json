@@ -5,7 +5,17 @@
       "Bash(powershell -Command \"Get-Process -Id 21724 | Select-Object Id,Path\")",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(node -e ' *)",
+      "Bash(git checkout *)",
+      "Bash(mv \"Okonite_Company_logo_2020.svg.webp\" \"okonite-logo.webp\")",
+      "Bash(mv \"Siemens_AG_logo.svg\" \"siemens-logo.svg\")",
+      "Bash(mv \"Fluke_Corporation_logo.svg.webp\" \"fluke-logo.webp\")",
+      "Bash(mv \"wetown+logo.webp\" \"wetown-logo.webp\")",
+      "Bash(mv \"Circutor_Logo_Color.png\" \"circutor-logo.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(node .agents/skills/impeccable/scripts/context.mjs)",
+      "Bash(node \"C:\\\\Users\\\\fraot\\\\.claude\\\\skills\\\\impeccable\\\\scripts\\\\context.mjs\")"
     ]
   }
 }
