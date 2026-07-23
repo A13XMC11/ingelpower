@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ProductoSubItem } from "@/data/productos";
+import type { ServicioSubItem } from "@/data/servicios";
 
-interface CableItemsProps {
-  productoSlug: string;
-  items: ProductoSubItem[];
+interface ServicioItemsProps {
+  servicioSlug: string;
+  items: ServicioSubItem[];
 }
 
-export function CableItems({ productoSlug, items }: CableItemsProps) {
+export function ServicioItems({ servicioSlug, items }: ServicioItemsProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4 items-start">
       {items.map((item) => (
         <Link
           key={item.slug}
-          href={`/productos/${productoSlug}/${item.slug}`}
+          href={`/servicios/${servicioSlug}/${item.slug}`}
           className="cable-card block"
         >
           <div className="cable-card-img">

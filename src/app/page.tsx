@@ -15,7 +15,7 @@ const slides: HeroSlide[] = [
     ),
     title: (
       <>
-        Servicios especializados y productos de <em>alta gama</em>, para proyectos que no pueden fallar.
+        Servicios Eléctricos Especializados y productos de <em>alta gama</em>, para proyectos exigentes.
       </>
     ),
     lead: "En INGELPOWER diseñamos, procuramos y construimos soluciones eléctricas de media y baja tensión para la industria que no puede darse el lujo de fallar: mallas a tierra, tableros, corrección de factor de potencia y proyectos de alta exigencia técnica.",
@@ -31,7 +31,7 @@ const slides: HeroSlide[] = [
     ),
     title: (
       <>
-        3 años construyendo la <em>columna eléctrica</em> del Metro de Quito.
+        3 años de trabajo continuo en el <em>sistema eléctrico</em> del Metro de Quito.
       </>
     ),
     lead: "Sistemas de mallas a tierra, acometidas de socorro 25kV y tableros de transferencia automática en las 15 estaciones, bajo estándares europeos de ACCIONA España.",
@@ -45,9 +45,26 @@ const slides: HeroSlide[] = [
         <path d="M3 21h18" />
       </svg>
     ),
-    title: "Arca Continental, Ferrero, Aymesa, Sherwin Williams y más.",
-    lead: "Más de $6.6 millones de dólares en proyectos ejecutados en sectores petroquímico, automotriz, alimenticio, cementero y de infraestructura urbana.",
+    title: "Arca Continental, UCEM, Aymesa, Sherwin Williams y más.",
+    lead: "$10 millones de dólares y más en proyectos ejecutados en sectores petroquímico, automotriz, alimenticio, cementero y de infraestructura urbana.",
     image: "/assets/presentacion-ferrero-sherwi.webp",
+  },
+  {
+    tag: "Importación directa sin mínimos",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-3.5 h-3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18" />
+        <path d="M7 16l4-4 3 3 6-7" />
+        <path d="M17 8h3v3" />
+      </svg>
+    ),
+    title: (
+      <>
+        Importación directa de <em>cables eléctricos especiales</em>, ducto de barras WETOWN y cable SIEMENS.
+      </>
+    ),
+    lead: "Importamos directo de fábrica en tiempo récord, sin importar el tramo o la cantidad requerida: no manejamos pedido mínimo. Suministro ágil de cable especial, ducto de barras WETOWN y cable SIEMENS para proyectos industriales en todo Ecuador.",
+    image: "/assets/producto-cables-especiales.webp",
   },
 ];
 
@@ -69,11 +86,10 @@ export default function HomePage() {
       />
 
       <div className="stats-bar">
-        <div className="container grid grid-cols-2 lg:grid-cols-4 gap-7">
+        <div className="container grid grid-cols-1 sm:grid-cols-3 gap-7">
           <StatCounter countTo={18} prefix="+" label="Años de experiencia" />
-          <StatCounter countTo={6.6} decimals={1} prefix="$" suffixAccent="M+" label="USD en proyectos ejecutados" />
-          <StatCounter countTo={16} suffixAccent="+" label="Clientes industriales" />
-          <StatCounter countTo={15} label="Estaciones Metro de Quito" />
+          <StatCounter countTo={10} decimals={1} prefix="$" suffixAccent="M+" label="USD en proyectos ejecutados" />
+          <StatCounter countTo={100} suffixAccent="+" label="Clientes Satisfechos" />
         </div>
       </div>
 
@@ -126,7 +142,7 @@ export default function HomePage() {
             mallas a tierra hasta la media tensión.
           </p>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
             <Reveal delay={0} className="service-card">
               <span className="num">01</span>
               <h3>Proyectos de Media Tensión</h3>
@@ -300,7 +316,7 @@ export default function HomePage() {
         <div className="container">
           <div className="eyebrow">Qué nos hace diferentes</div>
           <h2 className="max-w-[640px]">Apoyo paso a paso, desde el diseño hasta la puesta en marcha</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 process-grid mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 process-grid mt-10">
             <Reveal delay={0} className="process-step">
               <h4>Ingeniería</h4>
               <p>Inspección y elaboración de ingeniería básica y de detalle.</p>

@@ -1,5 +1,15 @@
 import type { ReactNode } from "react";
 
+export interface ServicioSubItem {
+  slug: string;
+  name: string;
+  summary: string;
+  description: string;
+  applications: string[];
+  image: string;
+  imageAlt: string;
+}
+
 export interface ServicioItem {
   slug: string;
   title: string;
@@ -8,6 +18,7 @@ export interface ServicioItem {
   lead: string;
   specs: string[];
   note?: string;
+  items?: ServicioSubItem[];
   icon: ReactNode;
   image: string;
   cardImageClass?: string;
@@ -67,7 +78,7 @@ export const servicios: ServicioItem[] = [
     title: "Tableros Eléctricos",
     flag: "Servicio principal",
     summary:
-      "Fabricación y montaje de tableros de distribución, MCC y de transferencia automática.",
+      "Fabricación y montaje de tableros de distribución, Banco de Condensadores, MCC y de transferencia automática.",
     lead: "Un tablero fabricado sin ingeniería de respaldo es un riesgo que se descubre en el peor momento: cuando falla el suministro o se dispara una protección sin causa aparente. INGELPOWER fabrica tableros MCC, de transferencia automática y distribución bajo norma NEMA, con componentes Siemens, ABB y Schneider, y entrega dossier de calidad con planos As-Built, protocolos de prueba y memorias de cálculo. También fabricamos equipamiento explosion proof para áreas clasificadas según NEC y ATEX.",
     specs: [
       "Tableros MCC (Motor Control Center) bajo norma NEMA I, 12 y 4X con arrancadores suaves y variadores",
@@ -133,12 +144,83 @@ export const servicios: ServicioItem[] = [
     title: "Alquiler de Equipos de Medición",
     summary:
       "Equipo especializado para mediciones y certificaciones de campo, con soporte técnico incluido.",
-    lead: "No siempre es necesario contratar un proyecto completo para obtener los datos que necesita. Si su empresa requiere certificar un sistema de mallas a tierra existente, medir la resistividad del suelo antes de diseñar una malla o verificar tensiones de toque y paso para cumplimiento normativo, INGELPOWER alquila el equipo especializado con soporte técnico incluido. El mismo equipo que usamos en nuestros proyectos, operado por personal capacitado o con guía para su propio equipo.",
+    lead: "No siempre es necesario contratar un proyecto completo para obtener los datos que necesita. Si su empresa requiere certificar un sistema de mallas a tierra existente, medir la resistividad del suelo antes de diseñar una malla, analizar la calidad de energía de su red o verificar el estado térmico de sus tableros, INGELPOWER alquila el equipo especializado FLUKE y METREL con soporte técnico incluido. El mismo equipo que usamos en nuestros proyectos, operado por personal capacitado o con guía para su propio equipo.",
     specs: [
-      "Telurómetro de cuatro hilos para medición de resistividad del suelo (método Wenner)",
-      "Medidor de tensiones de toque y paso para certificación de SPT bajo IEEE 80",
       "Soporte técnico en campo durante la medición e interpretación de resultados",
       "Entrega de informe técnico con los valores medidos y comparación contra límites normativos",
+      "Equipos calibrados y disponibles para alquiler por día, semana o proyecto",
+    ],
+    items: [
+      {
+        slug: "teluromentro-fluke-1625",
+        name: "Telurómetro FLUKE 1625",
+        summary: "Medición de resistividad del suelo y resistencia de puesta a tierra bajo método Wenner.",
+        description:
+          "Equipo de cuatro hilos para medir resistividad del suelo y resistencia de puesta a tierra sin necesidad de desconectar el sistema bajo prueba. Es la base para diseñar o certificar cualquier sistema de mallas a tierra (SPT) conforme a IEEE 80.",
+        applications: [
+          "Medición de resistividad del suelo previa al diseño de una malla a tierra",
+          "Certificación anual de resistencia de puesta a tierra en subestaciones y plantas industriales",
+          "Diagnóstico de mallas existentes con sospecha de deterioro o corrosión",
+        ],
+        image: "/assets/alquiler-equipo-medicion-fluke.webp",
+        imageAlt: "Telurómetro FLUKE 1625",
+      },
+      {
+        slug: "analizador-energia-fluke-435",
+        name: "Analizador de Energía FLUKE 435",
+        summary: "Registro de armónicos, flicker, factor de potencia y calidad de energía en tiempo real.",
+        description:
+          "Analizador de calidad de energía de clase A que registra armónicos, desbalances, flicker y factor de potencia durante periodos prolongados (hasta 7 días continuos), permitiendo sustentar reclamos ante la empresa eléctrica o diagnosticar fallas intermitentes en la red.",
+        applications: [
+          "Diagnóstico previo a la corrección de factor de potencia (banco de condensadores, SVG o AFQ)",
+          "Registro continuo de armónicos y desbalances para sustentar reclamos ante la distribuidora",
+          "Investigación de fallas intermitentes en tableros de distribución",
+        ],
+        image: "/assets/producto-instrumentos-medicion-fluke.webp",
+        imageAlt: "Analizador de Energía FLUKE 435",
+      },
+      {
+        slug: "medidor-aislamiento-fluke-1507",
+        name: "Medidor de Aislamiento FLUKE 1507",
+        summary: "Prueba de resistencia de aislamiento en motores, cables y transformadores.",
+        description:
+          "Megóhmetro que aplica tensiones de prueba de hasta 1000V para verificar el estado del aislamiento de motores, cables, transformadores y devanados, detectando degradación por humedad, envejecimiento o contaminación antes de que derive en una falla.",
+        applications: [
+          "Pruebas de aislamiento a motores y transformadores durante mantenimiento predictivo",
+          "Verificación de cables de media y baja tensión antes de su puesta en servicio",
+          "Diagnóstico de fallas de aislamiento en devanados de máquinas rotativas",
+        ],
+        image: "/assets/producto-instrumentos-medicion-fluke.webp",
+        imageAlt: "Medidor de aislamiento FLUKE 1507",
+      },
+      {
+        slug: "medidor-tension-toque-paso-metrel",
+        name: "Medidor de Tensión de Toque y Paso METREL",
+        summary: "Certificación de tensiones de toque y paso para sistemas de mallas a tierra bajo IEEE 80.",
+        description:
+          "Equipo METREL especializado en la medición de tensiones de toque y de paso, el paso final para certificar que un sistema de mallas a tierra mantiene esos valores dentro de los límites seguros para las personas establecidos en IEEE 80.",
+        applications: [
+          "Certificación final de sistemas de mallas a tierra en subestaciones y plantas industriales",
+          "Verificación normativa de tensiones de paso en instalaciones de infraestructura crítica",
+          "Auditorías de seguridad eléctrica exigidas por organismos de control",
+        ],
+        image: "/assets/alquiler-equipo-medicion-fluke.webp",
+        imageAlt: "Medidor de tensión de toque y paso METREL",
+      },
+      {
+        slug: "termografia-fluke-ti400",
+        name: "Análisis de Termografía — Cámara FLUKE Ti400",
+        summary: "Detección de puntos calientes en tableros y conexiones antes de que causen una falla.",
+        description:
+          "Cámara termográfica de alta resolución que detecta puntos calientes en conexiones, breakers, transformadores y tableros eléctricos sin necesidad de contacto ni desenergizar el equipo, permitiendo programar el mantenimiento antes de que ocurra una falla.",
+        applications: [
+          "Rutinas de mantenimiento predictivo durante paradas de planta programadas",
+          "Inspección de tableros de distribución y MCC en operación (sin desenergizar)",
+          "Detección temprana de conexiones flojas o sobrecargadas en subestaciones",
+        ],
+        image: "/assets/servicio-equipos-medicion.webp",
+        imageAlt: "Cámara termográfica FLUKE Ti400",
+      },
     ],
     image: "/assets/alquiler-equipo-medicion-fluke.webp",
     minHeight: 240,
@@ -153,4 +235,14 @@ export const servicios: ServicioItem[] = [
 
 export function getServicio(slug: string): ServicioItem | undefined {
   return servicios.find((s) => s.slug === slug);
+}
+
+export function getServicioSubItem(
+  servicioSlug: string,
+  itemSlug: string
+): { servicio: ServicioItem; item: ServicioSubItem } | undefined {
+  const servicio = getServicio(servicioSlug);
+  const item = servicio?.items?.find((i) => i.slug === itemSlug);
+  if (!servicio || !item) return undefined;
+  return { servicio, item };
 }

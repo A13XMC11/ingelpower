@@ -95,7 +95,7 @@ export default function QuienesSomosPage() {
               imageAlt="Apoyo paso a paso en cada etapa del proyecto"
             />
           </Reveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 process-grid mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 process-grid mt-10">
             <Reveal delay={0} className="process-step">
               <h4>Ingeniería</h4>
               <p>Inspección y elaboración de ingeniería básica y de detalle.</p>

@@ -22,6 +22,7 @@ export interface ProductoItem {
   summary: string;
   lead: string;
   pitch?: string;
+  video?: string;
   specs?: string[];
   applications?: string[];
   items?: ProductoSubItem[];
@@ -94,6 +95,34 @@ export const productos: ProductoItem[] = [
         ],
         image: "/assets/cable-control-multiconductor.webp",
         imageAlt: "Cable de control multiconductor",
+      },
+      {
+        slug: "media-tension",
+        name: "Cable de Media Tensión Armado",
+        summary: "3C x 2 AWG 5kV y 15kV con armadura para redes de distribución subterránea.",
+        description:
+          "Cable tripolar con aislamiento para media tensión (5kV y 15kV), armadura metálica y chaqueta MC-H / MC-HL. Disponible en calibre 3C x 2 AWG, diseñado para soportar esfuerzos mecánicos y condiciones de instalación subterránea o en bandeja, garantizando aislamiento confiable en redes de distribución de energía.",
+        applications: [
+          "Redes de distribución eléctrica de media tensión (5kV y 15kV)",
+          "Acometidas subterráneas entre subestaciones y centros de transformación",
+          "Alimentadores primarios en plantas industriales y proyectos de urbanización",
+        ],
+        image: "/assets/cable-armado-subterraneo.webp",
+        imageAlt: "Cable de media tensión armado",
+      },
+      {
+        slug: "fuerza-armado",
+        name: "Cable de Fuerza Armado TECK90",
+        summary: "500 MCM y 350 MCM en 600V y 1kV, armado TECK90 / MC-HL para cargas de alta corriente.",
+        description:
+          "Cable tripolar de fuerza en calibres 500 MCM y 350 MCM, disponible en 600V y 1kV, con construcción armada TECK90 o MC-HL. Ideal para el transporte de altas corrientes en alimentadores principales, con protección mecánica que permite instalación directa en bandeja, ducto o tendido enterrado.",
+        applications: [
+          "Alimentadores principales de tableros y centros de control de motores",
+          "Conexión de transformadores, generadores y equipos de alta demanda",
+          "Instalaciones industriales que requieren protección mecánica reforzada",
+        ],
+        image: "/assets/cable-control-multiconductor.webp",
+        imageAlt: "Cable de fuerza armado TECK90",
       },
     ],
     brands: [
@@ -214,6 +243,7 @@ export const productos: ProductoItem[] = [
     lead: "Los bancos de condensadores tradicionales corrigen el factor de potencia en escalones fijos y con cierto retardo. Si su planta tiene cargas que cambian rápido — motores grandes, hornos, compresores — esos escalones llegan tarde y generan sobrecorrientes o incluso resonancias que dañan equipos. El SVG de Circutor es un compensador electrónico que inyecta potencia reactiva de forma continua y con respuesta inferior a 20ms, eliminando multas y protegiendo su instalación sin partes mecánicas que desgastar.",
     pitch:
       "Corrija el factor de potencia en milisegundos y evite multas, sin condensadores que desgastar. Solicite un dimensionamiento gratuito para su planta.",
+    video: "M6ttU8K_nQo",
     specs: [
       "Respuesta dinámica < 20ms: corrige antes de que la empresa eléctrica registre la caída",
       "Rango de compensación continuo de 0 a 100% sin saltos ni transitorios",
@@ -245,6 +275,7 @@ export const productos: ProductoItem[] = [
     lead: "Los variadores de frecuencia, UPS, rectificadores y equipos de electrónica de potencia inyectan corrientes armónicas a la red que sobrecalientan transformadores, disparan protecciones sin razón aparente y reducen la vida útil de motores y condensadores. El filtro activo AFQ de Circutor detecta y cancela esas distorsiones en tiempo real, en cualquier orden armónico, sin importar cuánto varíe la carga. El resultado es una red limpia, equipos que duran más y cumplimiento de la norma IEEE 519.",
     pitch:
       "Proteja sus equipos y cumpla la norma eliminando armónicos en tiempo real. Pida un diagnóstico de calidad de energía para su instalación.",
+    video: "uoKssPLWVww",
     specs: [
       "Filtrado activo hasta el armónico 50°, con prioridad programable por orden",
       "THD-I reducido por debajo del 5% según IEEE 519 y EN 61000-3-12",

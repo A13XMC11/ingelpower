@@ -36,5 +36,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...navEntries, ...servicioEntries, ...productoEntries, ...productoItemEntries];
+  const servicioItemEntries: MetadataRoute.Sitemap = servicios.flatMap(({ slug, items }) =>
+    (items ?? []).map((item) => ({
+      url: `${SITE_URL}/servicios/${slug}/${item.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    }))
+  );
+
+  return [
+    ...navEntries,
+    ...servicioEntries,
+    ...productoEntries,
+    ...productoItemEntries,
+    ...servicioItemEntries,
+  ];
 }

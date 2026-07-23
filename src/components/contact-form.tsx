@@ -2,13 +2,37 @@
 
 import { useRef, useState } from "react";
 
-type SubmitState = "idle" | "submitting" | "success" | "error";
+type SubmitState = "idle" | "submitting" | "success";
+
+const WHATSAPP_NUMBER = "593998308866";
+
+function buildWhatsAppMessage(fields: {
+  name: FormDataEntryValue | null;
+  company: FormDataEntryValue | null;
+  email: FormDataEntryValue | null;
+  phone: FormDataEntryValue | null;
+  interest: FormDataEntryValue | null;
+  message: FormDataEntryValue | null;
+}): string {
+  const lines = [
+    "⚡ *Nuevo contacto desde la web INGELPOWER*",
+    "",
+    `👤 *Nombre:* ${fields.name}`,
+    fields.company ? `🏢 *Empresa:* ${fields.company}` : null,
+    `📧 *Correo:* ${fields.email}`,
+    fields.phone ? `📱 *Teléfono:* ${fields.phone}` : null,
+    `🔧 *Interés:* ${fields.interest}`,
+    "",
+    `💬 *Mensaje:*\n${fields.message}`,
+  ].filter(Boolean);
+
+  return lines.join("\n");
+}
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const successRef = useRef<HTMLParagraphElement | null>(null);
   const [status, setStatus] = useState<SubmitState>("idle");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const showSuccess = status === "success";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +43,10 @@ export function ContactForm() {
     if (!form) return;
 
     const formData = new FormData(form);
+
+    // Honeypot: bots fill this hidden field, real users never do.
+    if (formData.get("website")) return;
+
     const payload = {
       name: formData.get("name"),
       company: formData.get("company"),
@@ -29,8 +57,13 @@ export function ContactForm() {
       website: formData.get("website"),
     };
 
+    // Open WhatsApp synchronously (same user gesture) so browsers don't block the popup.
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      buildWhatsAppMessage(payload),
+    )}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
     setStatus("submitting");
-    setErrorMessage(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -43,18 +76,15 @@ export function ContactForm() {
         const data = await response.json().catch(() => null);
         throw new Error(data?.error ?? "No se pudo enviar el mensaje.");
       }
-
-      form.reset();
-      setStatus("success");
-      requestAnimationFrame(() => {
-        successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      });
-    } catch (error: unknown) {
-      setStatus("error");
-      setErrorMessage(
-        error instanceof Error ? error.message : "No se pudo enviar el mensaje.",
-      );
+    } catch {
+      // Email delivery is a best-effort backup; WhatsApp is the primary channel.
     }
+
+    form.reset();
+    setStatus("success");
+    requestAnimationFrame(() => {
+      successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   };
 
   return (
@@ -115,22 +145,17 @@ export function ContactForm() {
         className="hidden"
       />
       <button type="submit" className="btn btn-primary w-full" disabled={status === "submitting"}>
-        {status === "submitting" ? "Enviando..." : "Enviar mensaje"}
+        {status === "submitting" ? "Enviando..." : "Enviar por WhatsApp"}
       </button>
       <p className="form-note">
-        Al enviar este formulario, acepta ser contactado por nuestro equipo comercial.
+        Al enviar, se abrirá WhatsApp con su mensaje listo para enviar a nuestro equipo comercial.
       </p>
       {showSuccess && (
         <p
           ref={successRef}
           className="mt-4 py-3.5 px-4 bg-blue-100 text-blue-800 rounded-lg text-[.9rem] font-semibold"
         >
-          ¡Gracias! Hemos recibido su mensaje y nos pondremos en contacto pronto.
-        </p>
-      )}
-      {status === "error" && (
-        <p className="mt-4 py-3.5 px-4 bg-red-100 text-red-800 rounded-lg text-[.9rem] font-semibold">
-          {errorMessage}
+          ¡Listo! Le abrimos WhatsApp con su mensaje — solo confirme el envío allí.
         </p>
       )}
     </form>

@@ -8,7 +8,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "/quienes-somos", label: "Quiénes Somos" },
   { href: "/servicios", label: "Servicios" },
   { href: "/productos", label: "Productos" },
-  { href: "/proyectos", label: "Proyectos" },
+  { href: "/proyectos", label: "Nuestra Experiencia" },
   { href: "/contacto", label: "Contacto" },
 ];
 
@@ -17,7 +17,7 @@ export const FOOTER_NAV_LINKS: NavLink[] = [
   { href: "/quienes-somos", label: "Quiénes Somos" },
   { href: "/servicios", label: "Servicios" },
   { href: "/productos", label: "Productos" },
-  { href: "/proyectos", label: "Proyectos" },
+  { href: "/proyectos", label: "Nuestra Experiencia" },
 ];
 
 export const FOOTER_SERVICE_LINKS: NavLink[] = [

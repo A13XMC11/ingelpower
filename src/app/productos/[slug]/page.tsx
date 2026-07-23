@@ -5,6 +5,7 @@ import { IndustrialPlate } from "@/components/industrial-plate";
 import { Reveal } from "@/components/reveal";
 import { CatalogSideNav } from "@/components/catalog-side-nav";
 import { CableItems } from "@/components/cable-items";
+import { YouTubeFacade } from "@/components/youtube-facade";
 import { getProducto, productos } from "@/data/productos";
 
 interface ProductoPageProps {
@@ -97,6 +98,13 @@ export default async function ProductoDetailPage({ params }: ProductoPageProps) 
                 </div>
               )}
             </Reveal>
+
+            {producto.video ? (
+              <Reveal className="detail-block">
+                <h2 className="mb-4">Video: {producto.title}</h2>
+                <YouTubeFacade videoId={producto.video} title={producto.title} />
+              </Reveal>
+            ) : null}
 
             <Reveal className="cta-banner">
               <div>

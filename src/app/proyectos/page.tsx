@@ -142,11 +142,10 @@ export default function ProyectosPage() {
       </div>
 
       <div className="stats-bar">
-        <div className="container grid grid-cols-2 lg:grid-cols-4 gap-7">
+        <div className="container grid grid-cols-1 sm:grid-cols-3 gap-7">
           <StatCounter countTo={6.6} decimals={1} prefix="$" suffixAccent="M+" label="USD en proyectos ejecutados" />
           <StatCounter countTo={17} label="Contratos documentados" />
           <StatCounter countTo={18} prefix="+" label="Años de experiencia" />
-          <StatCounter countTo={15} label="Estaciones Metro de Quito" />
         </div>
       </div>
 

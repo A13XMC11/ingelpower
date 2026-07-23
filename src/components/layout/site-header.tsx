@@ -44,8 +44,9 @@ export function SiteHeader() {
         <div className="container">
           <div>Energía que trasciende — Ingeniería eléctrica y media tensión</div>
           <div className="topbar-links">
-            <a href="tel:+593000000000">+593 00 000 0000</a>
-            <a href="mailto:info@ingelpower.com">info@ingelpower.com</a>
+            <a href="tel:+593984255690">+593 98 425 5690</a>
+            <a href="mailto:ingenieria@ingelpower.com">ingenieria@ingelpower.com</a>
+            <a href="mailto:proyectos@ingelpower.com">proyectos@ingelpower.com</a>
           </div>
         </div>
       </div>
@@ -53,7 +54,7 @@ export function SiteHeader() {
       <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
         <div className="container nav-wrap">
           <Link href="/" className="logo-link">
-            <Image src="/assets/logo.svg" alt="INGELPOWER" width={190} height={44} priority />
+            <Image src="/assets/logo.svg" alt="INGELPOWER" width={238} height={55} priority />
           </Link>
           <nav className={`main-nav${isNavOpen ? " open" : ""}`}>
             <ul>
