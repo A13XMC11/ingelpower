@@ -96,6 +96,29 @@ export default async function ServicioDetailPage({ params }: ServicioPageProps) 
         </div>
       </section>
 
+      {servicio.galeria ? (
+        <section className="section-tight bg-gray">
+          <div className="container flex flex-col gap-16 md:gap-20">
+            {servicio.galeria.map((tablero, index) => (
+              <Reveal
+                key={tablero.name}
+                className={`split${index % 2 === 1 ? " reverse" : ""}`}
+              >
+                <IndustrialPlate
+                  minHeight={320}
+                  image={tablero.image}
+                  imageAlt={tablero.imageAlt}
+                />
+                <div>
+                  <h3 className="mb-3">{tablero.name}</h3>
+                  <p className="text-ink-700 leading-relaxed">{tablero.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="bg-navy section-tight">
         <div className="container">
           <Reveal className="cta-banner">

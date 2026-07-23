@@ -10,6 +10,13 @@ export interface ServicioSubItem {
   imageAlt: string;
 }
 
+export interface ServicioGaleriaItem {
+  name: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
 export interface ServicioItem {
   slug: string;
   title: string;
@@ -19,6 +26,7 @@ export interface ServicioItem {
   specs: string[];
   note?: string;
   items?: ServicioSubItem[];
+  galeria?: ServicioGaleriaItem[];
   icon: ReactNode;
   image: string;
   cardImageClass?: string;
@@ -86,6 +94,43 @@ export const servicios: ServicioItem[] = [
       "Tableros de distribución principal y secundaria para baja y media tensión",
       "Equipamiento explosion proof certificado para áreas clasificadas NEC/ATEX (petroquímica, minería)",
       "Entrega de dossier de calidad: planos As-Built, protocolos de prueba FAT y memoria de cálculo",
+    ],
+    galeria: [
+      {
+        name: "Tableros de Distribución",
+        description:
+          "Fabricamos tableros de distribución principal y secundaria a la medida de la carga instalada de cada cliente: gabinetes en lámina galvanizada con pintura electrostática, placa de identificación del proyecto, buses de cobre certificados y breakers Siemens, ABB o Schneider. Cada circuito queda numerado y documentado para que el mantenimiento futuro sea rápido y seguro.",
+        image: "/assets/tableros/tablero-distribucion.webp",
+        imageAlt: "Tablero de distribución eléctrica fabricado por INGELPOWER",
+      },
+      {
+        name: "Tableros de Distribución de Alta Capacidad (3200A–4500A)",
+        description:
+          "Para plantas industriales con cargas superiores a 3000A fabricamos tableros de distribución pesada con barras de cobre dimensionadas para 3200A y 4500A, botas termoencogibles señalizadas por fase, frente muerto para protección del personal y breakers de bastidor abierto Siemens. Cada unidad se entrega con protocolo de pruebas FAT antes de salir de taller.",
+        image: "/assets/tableros/tablero-distribucion-alta-capacidad.webp",
+        imageAlt: "Tablero de distribución de alta capacidad 3200 amperios",
+      },
+      {
+        name: "Banco de Condensadores",
+        description:
+          "Bancos de condensadores automáticos de 200 kVAR a 300 kVAR / 440V para corrección de factor de potencia, con regulador de reactivos, contactores de maniobra capacitiva y protecciones individuales por escalón. Eliminan las multas por energía reactiva y reducen las pérdidas por sobrecarga en conductores y transformadores.",
+        image: "/assets/tableros/banco-condensadores.webp",
+        imageAlt: "Banco de condensadores 200 kVAR fabricado por INGELPOWER",
+      },
+      {
+        name: "Tableros de Bypass",
+        description:
+          "Tableros de bypass manual y automático que permiten mantener el suministro eléctrico durante el mantenimiento o falla de un equipo aguas arriba (UPS, variador o transferencia), sin interrumpir el proceso productivo. Fabricados con enclavamientos mecánicos y eléctricos que impiden maniobras incorrectas.",
+        image: "/assets/tableros/tablero-bypass.webp",
+        imageAlt: "Tablero eléctrico de bypass en fabricación",
+      },
+      {
+        name: "Mantenimiento y Análisis Termográfico de Tableros",
+        description:
+          "Inspección predictiva de tableros en operación con cámara termográfica FLUKE Ti400 y pinza amperimétrica, sin necesidad de desenergizar el equipo. Detectamos puntos calientes por conexiones flojas o sobrecargadas antes de que deriven en una falla, y entregamos un informe técnico con hallazgos y recomendaciones.",
+        image: "/assets/tableros/mantenimiento-termografia.webp",
+        imageAlt: "Técnico de INGELPOWER realizando análisis termográfico a un tablero eléctrico",
+      },
     ],
     image: "/assets/tablero-electrico.webp",
     minHeight: 280,
