@@ -121,7 +121,7 @@ export const servicios: ServicioItem[] = [
         name: "Tableros de Bypass",
         description:
           "Tableros de bypass manual y automático que permiten mantener el suministro eléctrico durante el mantenimiento o falla de un equipo aguas arriba (UPS, variador o transferencia), sin interrumpir el proceso productivo. Fabricados con enclavamientos mecánicos y eléctricos que impiden maniobras incorrectas.",
-        image: "/assets/tableros/tablero-bypass.webp",
+        image: "/assets/tablero-bypass.webp",
         imageAlt: "Tablero eléctrico de bypass en fabricación",
       },
       {
@@ -207,7 +207,7 @@ export const servicios: ServicioItem[] = [
           "Certificación anual de resistencia de puesta a tierra en subestaciones y plantas industriales",
           "Diagnóstico de mallas existentes con sospecha de deterioro o corrosión",
         ],
-        image: "/assets/alquiler-equipo-medicion-fluke.webp",
+        image: "/assets/telurometro-fluke-1625.webp",
         imageAlt: "Telurómetro FLUKE 1625",
       },
       {
@@ -221,7 +221,7 @@ export const servicios: ServicioItem[] = [
           "Registro continuo de armónicos y desbalances para sustentar reclamos ante la distribuidora",
           "Investigación de fallas intermitentes en tableros de distribución",
         ],
-        image: "/assets/producto-instrumentos-medicion-fluke.webp",
+        image: "/assets/analizador-energia-fluke-435.webp",
         imageAlt: "Analizador de Energía FLUKE 435",
       },
       {
@@ -235,7 +235,7 @@ export const servicios: ServicioItem[] = [
           "Verificación de cables de media y baja tensión antes de su puesta en servicio",
           "Diagnóstico de fallas de aislamiento en devanados de máquinas rotativas",
         ],
-        image: "/assets/producto-instrumentos-medicion-fluke.webp",
+        image: "/assets/medidor-aislamiento-fluke.webp",
         imageAlt: "Medidor de aislamiento FLUKE 1507",
       },
       {
@@ -249,7 +249,7 @@ export const servicios: ServicioItem[] = [
           "Verificación normativa de tensiones de paso en instalaciones de infraestructura crítica",
           "Auditorías de seguridad eléctrica exigidas por organismos de control",
         ],
-        image: "/assets/alquiler-equipo-medicion-fluke.webp",
+        image: "/assets/medidor-tension-pase-toque.webp",
         imageAlt: "Medidor de tensión de toque y paso METREL",
       },
       {
@@ -263,7 +263,7 @@ export const servicios: ServicioItem[] = [
           "Inspección de tableros de distribución y MCC en operación (sin desenergizar)",
           "Detección temprana de conexiones flojas o sobrecargadas en subestaciones",
         ],
-        image: "/assets/servicio-equipos-medicion.webp",
+        image: "/assets/camara-fluke-ti400.webp",
         imageAlt: "Cámara termográfica FLUKE Ti400",
       },
     ],

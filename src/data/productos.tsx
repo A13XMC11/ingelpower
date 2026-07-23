@@ -107,7 +107,7 @@ export const productos: ProductoItem[] = [
           "Acometidas subterráneas entre subestaciones y centros de transformación",
           "Alimentadores primarios en plantas industriales y proyectos de urbanización",
         ],
-        image: "/assets/cable-armado-subterraneo.webp",
+        image: "/assets/cable-media-tension-armado.webp",
         imageAlt: "Cable de media tensión armado",
       },
       {
@@ -121,7 +121,7 @@ export const productos: ProductoItem[] = [
           "Conexión de transformadores, generadores y equipos de alta demanda",
           "Instalaciones industriales que requieren protección mecánica reforzada",
         ],
-        image: "/assets/cable-control-multiconductor.webp",
+        image: "/assets/cable-fuerza-teck90.webp",
         imageAlt: "Cable de fuerza armado TECK90",
       },
     ],

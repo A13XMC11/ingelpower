@@ -8,7 +8,7 @@ import { Reveal } from "@/components/reveal";
 export const metadata: Metadata = {
   title: "Proyectos y Experiencia",
   description:
-    "Proyectos emblemáticos de INGELPOWER: Metro de Quito, Sherwin Williams, Aymesa, Ferrero, UCEM y más. Más de $6.6 millones de dólares en proyectos eléctricos ejecutados en Ecuador.",
+    "Proyectos emblemáticos de INGELPOWER: Metro de Quito, Sherwin Williams, Aymesa, Ferrero, UCEM y más. Más de $10.0 millones de dólares en proyectos eléctricos ejecutados en Ecuador.",
 };
 
 const projects = [
@@ -143,8 +143,8 @@ export default function ProyectosPage() {
 
       <div className="stats-bar">
         <div className="container grid grid-cols-1 sm:grid-cols-3 gap-7">
-          <StatCounter countTo={6.6} decimals={1} prefix="$" suffixAccent="M+" label="USD en proyectos ejecutados" />
-          <StatCounter countTo={17} label="Contratos documentados" />
+          <StatCounter countTo={10.0} decimals={1} prefix="$" suffixAccent="M+" label="USD en proyectos ejecutados" />
+          <StatCounter countTo={100} label="Contratos documentados" />
           <StatCounter countTo={18} prefix="+" label="Años de experiencia" />
         </div>
       </div>
