@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel, type HeroSlide } from "@/components/hero-carousel";
 import { StatCounter } from "@/components/stat-counter";
 import { IndustrialPlate } from "@/components/industrial-plate";
 import { Reveal } from "@/components/reveal";
+
+export const metadata: Metadata = {
+  title: "INGELPOWER | Ingeniería Eléctrica, Media Tensión y Cables Especiales en Ecuador",
+  description:
+    "Importación directa de cables armados, control y potencia, VFD, TECK 90, MC-HL, ducto de barras/blindobarras WETOWN, equipos SIEMENS e instrumentación FLUKE. +18 años de experiencia en mallas a tierra, tableros eléctricos y proyectos de media tensión en Ecuador.",
+  openGraph: {
+    title: "INGELPOWER | Ingeniería Eléctrica, Media Tensión y Cables Especiales en Ecuador",
+    description:
+      "Importación directa de cables armados, control y potencia, VFD, TECK 90, MC-HL, ducto de barras/blindobarras WETOWN, equipos SIEMENS e instrumentación FLUKE.",
+    images: ["/assets/producto-cables-especiales.webp"],
+  },
+};
 
 const slides: HeroSlide[] = [
   {
@@ -60,11 +73,11 @@ const slides: HeroSlide[] = [
     ),
     title: (
       <>
-        Importación directa de <em>cables eléctricos especiales</em>, ducto de barras WETOWN y cable SIEMENS.
+        Importación directa de: <em>Cables Armados, Control y Potencia</em>. VFD, TECK 90, MC-HL. Ducto de Barras/ Blindobarras - WETOWN. Equipos SIEMENS e Instrumentación FLUKE.
       </>
     ),
-    lead: "Importamos directo de fábrica en tiempo récord, sin importar el tramo o la cantidad requerida: no manejamos pedido mínimo. Suministro ágil de cable especial, ducto de barras WETOWN y cable SIEMENS para proyectos industriales en todo Ecuador.",
-    image: "/assets/producto-cables-especiales.webp",
+    lead: "Importamos directo de fábrica en tiempo récord, sin importar el tramo o la cantidad requerida: no manejamos pedido mínimo.",
+    image: "/assets/hero-collage-4.webp",
   },
 ];
 
@@ -198,12 +211,12 @@ export default function HomePage() {
               <div className="card-image">
                 <Image
                   src="/assets/producto-ducto-barras.webp"
-                  alt="Ducto de Barras WETOWN"
+                  alt="Ducto de Barras/ Blindobarras - WETOWN"
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 />
               </div>
-              <h3>Ducto de Barras — WETOWN</h3>
+              <h3>Ducto de Barras/ Blindobarras - WETOWN</h3>
               <p>Distribución de energía en alta densidad para plantas industriales. Nuestra línea insignia.</p>
               <Link href="/productos/wetown" className="tag">Ver catálogo →</Link>
             </Reveal>

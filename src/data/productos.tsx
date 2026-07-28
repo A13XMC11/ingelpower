@@ -141,7 +141,7 @@ export const productos: ProductoItem[] = [
   },
   {
     slug: "automatizacion",
-    title: "Automatización Industrial",
+    title: "Automatización Industrial - SIEMENS",
     summary:
       "Integración de PLC, SCADA, variadores y tableros MCC para convertir su planta en un sistema controlado, eficiente y sin paradas inesperadas.",
     lead: "Una planta sin automatización depende del criterio humano en cada decisión crítica. Con INGELPOWER integramos PLC Siemens, variadores de frecuencia, sistemas SCADA y tableros MCC en un solo sistema coordinado: su proceso gana visibilidad, control y la capacidad de responder antes de que ocurra una falla. Lo hemos hecho en plantas de biogás, automotrices y proyectos de infraestructura urbana.",
@@ -173,7 +173,7 @@ export const productos: ProductoItem[] = [
   },
   {
     slug: "medicion",
-    title: "Instrumentos de Medición",
+    title: "Instrumentos de Medición - FLUKE",
     summary:
       "Equipos FLUKE de precisión para certificar SPT, diagnosticar fallas eléctricas y ejecutar mantenimiento predictivo con datos reales.",
     lead: "Un diagnóstico incorrecto puede costar semanas de parada o una multa regulatoria. Comercializamos y utilizamos instrumentos FLUKE — la marca de referencia mundial en medición eléctrica — para certificar sistemas de mallas a tierra, analizar la calidad de energía de su red y detectar fallas antes de que se conviertan en averías. Los mismos equipos que usamos en nuestros proyectos están disponibles para su planta.",
@@ -204,7 +204,7 @@ export const productos: ProductoItem[] = [
   },
   {
     slug: "wetown",
-    title: "Ducto de Barras — WETOWN",
+    title: "Ducto de Barras/ Blindobarras - WETOWN",
     flag: "Línea insignia",
     summary:
       "Sistema de distribución eléctrica de alta densidad que reemplaza bandejas de cable con menor caída de tensión, montaje más rápido y máxima flexibilidad para ampliar su planta.",
@@ -264,6 +264,39 @@ export const productos: ProductoItem[] = [
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <path d="M3 17l6-6 4 4 8-8" />
+      </svg>
+    ),
+  },
+  {
+    slug: "statcom-media-tension",
+    title: "Condensadores y Banco de Condensadores - STATCOM/CIRCUTOR",
+    flag: "Media tensión",
+    summary:
+      "Compensador estático síncrono (STATCOM) para media tensión: corrige el factor de potencia y estabiliza la red en subestaciones, minería, hornos de arco y parques eólicos, con respuesta en milisegundos y sin bancos de condensadores en el lado de alta.",
+    lead: "En redes de media tensión, un bajo factor de potencia no solo genera multas: provoca caídas de tensión, flicker y desestabiliza la red frente a cargas industriales pesadas como hornos de arco, molinos de minería o parques eólicos. El STATCOM (Static Synchronous Compensator) es un compensador electrónico de reactivos que inyecta o absorbe potencia reactiva en la red de media tensión de forma continua y en milisegundos, sin bancos de condensadores conmutados ni riesgo de resonancia. Es la misma tecnología que utilizan las utilities y grandes plantas industriales para cumplir norma y sostener la calidad de energía en redes de 4.16 kV a 34.5 kV.",
+    pitch:
+      "Estabilice su red de media tensión y elimine multas por bajo factor de potencia con tecnología STATCOM de respuesta instantánea. Solicite el dimensionamiento técnico para su subestación o planta.",
+    specs: [
+      "Compensación de reactivos en media tensión: 4.16 kV, 13.8 kV, 23 kV y 34.5 kV",
+      "Tiempo de respuesta inferior a 1 ciclo de red, ideal para cargas volátiles (hornos de arco, molinos)",
+      "Control continuo de 0 a 100% de la capacidad, sin escalones ni transitorios de conmutación",
+      "Mitigación de flicker y estabilización de tensión frente a fluctuaciones bruscas de carga",
+      "Topología modular multinivel (MMC) con IGBT de alta tensión, sin bancos de condensadores en el lado de media tensión",
+      "Comunicación IEC 61850 / Modbus para integración con SCADA y sistemas de gestión de subestación",
+    ],
+    applications: [
+      "Subestaciones de utilities que requieren estabilizar tensión y cumplir factor de potencia en el punto de entrega",
+      "Plantas de minería con molinos y grandes motores de media tensión que generan fluctuaciones severas de carga",
+      "Hornos de arco eléctrico y acerías, donde el flicker afecta a toda la red de distribución cercana",
+      "Parques eólicos y solares que deben cumplir códigos de red (grid code) de soporte de reactivos y estabilidad de tensión",
+    ],
+    brands: [{ name: "CIRCUTOR" }],
+    image: "/assets/Statcom-Correccion.webp",
+    minHeight: 280,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
+        <path d="M4 20V10M9 20V4M14 20v-8M19 20V7" />
+        <path d="M3 20h18" />
       </svg>
     ),
   },

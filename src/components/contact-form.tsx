@@ -22,8 +22,8 @@ function buildWhatsAppMessage(fields: {
     `📧 *Correo:* ${fields.email}`,
     fields.phone ? `📱 *Teléfono:* ${fields.phone}` : null,
     `🔧 *Interés:* ${fields.interest}`,
-    "",
-    `💬 *Mensaje:*\n${fields.message}`,
+    fields.message ? "" : null,
+    fields.message ? `💬 *Mensaje:*\n${fields.message}` : null,
   ].filter(Boolean);
 
   return lines.join("\n");
@@ -126,12 +126,11 @@ export function ContactForm() {
         </select>
       </div>
       <div className="form-field">
-        <label htmlFor="message">Mensaje</label>
+        <label htmlFor="message">Mensaje (Opcional)</label>
         <textarea
           id="message"
           name="message"
           rows={5}
-          required
           placeholder="Cuéntenos sobre su proyecto o requerimiento..."
         />
       </div>

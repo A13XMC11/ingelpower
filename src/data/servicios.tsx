@@ -132,7 +132,7 @@ export const servicios: ServicioItem[] = [
         imageAlt: "Técnico de INGELPOWER realizando análisis termográfico a un tablero eléctrico",
       },
     ],
-    image: "/assets/tablero-electrico.webp",
+    image: "/assets/tablero-bypass.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -155,7 +155,7 @@ export const servicios: ServicioItem[] = [
       "Eliminación de armónicos con filtro activo AFQ Circutor — THD-I < 5% según IEEE 519",
       "Informe técnico antes y después con medición de ahorro real en kVAR y factor de potencia",
     ],
-    image: "/assets/servicio-factor-potencia.webp",
+    image: "/assets/CorrectorFactorDePotencia.webp",
     minHeight: 280,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
@@ -240,16 +240,17 @@ export const servicios: ServicioItem[] = [
       },
       {
         slug: "medidor-tension-toque-paso-metrel",
-        name: "Medidor de Tensión de Toque y Paso METREL",
-        summary: "Certificación de tensiones de toque y paso para sistemas de mallas a tierra bajo IEEE 80.",
+        name: "Medidor de Tensión de Toque y Paso Ml 3295 - METREL",
+        summary:
+          "Sistema de medición de tensión diseñado para comprobar y verificar la puesta a tierra de protección de centrales eléctricas, subestaciones y otros sistemas eléctricos.",
         description:
-          "Equipo METREL especializado en la medición de tensiones de toque y de paso, el paso final para certificar que un sistema de mallas a tierra mantiene esos valores dentro de los límites seguros para las personas establecidos en IEEE 80.",
+          "Sistema de medición de tensión diseñado para comprobar y verificar la puesta a tierra de protección de centrales eléctricas, subestaciones y otros sistemas eléctricos.",
         applications: [
           "Certificación final de sistemas de mallas a tierra en subestaciones y plantas industriales",
           "Verificación normativa de tensiones de paso en instalaciones de infraestructura crítica",
           "Auditorías de seguridad eléctrica exigidas por organismos de control",
         ],
-        image: "/assets/medidor-tension-pase-toque.webp",
+        image: "/assets/toque-paso.webp",
         imageAlt: "Medidor de tensión de toque y paso METREL",
       },
       {
