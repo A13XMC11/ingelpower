@@ -19,6 +19,15 @@ const requestLog = new Map<string, number[]>();
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
+
+  // Opportunistic cleanup: drop IPs with no requests in the current window
+  // so this map can't grow unbounded over a long-lived warm instance.
+  for (const [key, timestamps] of requestLog) {
+    if (timestamps.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) {
+      requestLog.delete(key);
+    }
+  }
+
   const timestamps = (requestLog.get(ip) ?? []).filter(
     (t) => now - t < RATE_LIMIT_WINDOW_MS,
   );
@@ -27,8 +36,29 @@ function isRateLimited(ip: string): boolean {
   return timestamps.length > RATE_LIMIT_MAX_REQUESTS;
 }
 
+function isTrustedOrigin(request: NextRequest): boolean {
+  const origin = request.headers.get("origin");
+  // Same-origin requests from browsers (fetch/XHR) always send an Origin
+  // header; its absence means the request didn't come from a page load in
+  // a browser (e.g. curl, a server-to-server script), which we also allow
+  // since this endpoint has no session/cookie state to forge.
+  if (!origin) return true;
+  return origin === request.nextUrl.origin;
+}
+
+// Strip CR/LF and other control characters so user input can't break out of
+// the single-line email subject or inject stray header-like lines into the
+// plain-text body.
+function sanitizeForEmail(value: string): string {
+  return value.replace(/[\r\n\x00-\x1f\x7f]/g, " ").trim();
+}
+
 export async function POST(request: NextRequest) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+
+  if (!isTrustedOrigin(request)) {
+    return NextResponse.json({ error: "Origen no permitido." }, { status: 403 });
+  }
 
   if (isRateLimited(ip)) {
     return NextResponse.json(
@@ -63,19 +93,23 @@ export async function POST(request: NextRequest) {
   }
 
   const { name, company, email, phone, interest, message } = parsed.data;
+  const safeName = sanitizeForEmail(name);
+  const safeCompany = company ? sanitizeForEmail(company) : company;
+  const safePhone = phone ? sanitizeForEmail(phone) : phone;
+  const safeInterest = sanitizeForEmail(interest);
   const resend = new Resend(apiKey);
 
   const { error } = await resend.emails.send({
     from: "INGELPOWER Web <onboarding@resend.dev>",
     to: [toEmail],
     replyTo: email,
-    subject: `Nuevo contacto web: ${name}`,
+    subject: `Nuevo contacto web: ${safeName}`,
     text: [
-      `Nombre: ${name}`,
-      company ? `Empresa: ${company}` : null,
+      `Nombre: ${safeName}`,
+      safeCompany ? `Empresa: ${safeCompany}` : null,
       `Correo: ${email}`,
-      phone ? `Teléfono: ${phone}` : null,
-      `Interés: ${interest}`,
+      safePhone ? `Teléfono: ${safePhone}` : null,
+      `Interés: ${safeInterest}`,
       "",
       "Mensaje:",
       message,
