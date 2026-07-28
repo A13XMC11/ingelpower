@@ -625,9 +625,68 @@
   @media (max-width: 560px) {
     section { padding: 56px 0; }
     .cta-banner { flex-direction: column; text-align: center; padding: 36px 24px; }
-    .hero { min-height: auto; }
-    .hero-inner { padding: 60px 0 50px; }
-    .topbar .container { flex-direction: column; align-items: flex-start; gap: 4px; }
-    .topbar .topbar-links { gap: 14px; font-size: .78rem; }
+    .topbar { display: none; }
+    .topbar .container {
+      justify-content: center;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    .topbar .container > div:first-child,
+    .topbar .topbar-links a:nth-child(3) {
+      display: none;
+    }
+    .topbar .topbar-links {
+      width: 100%;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: nowrap;
+    }
+    .topbar .topbar-links a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .nav-wrap { padding-top: 11px; padding-bottom: 11px; }
+    .logo-link img { width: 206px; height: auto; }
+    .nav-toggle span { width: 24px; height: 2.5px; margin-top: 5px; margin-bottom: 5px; }
+    .hero { min-height: 520px; align-items: flex-end; }
+    .hero-media::after {
+      background:
+        linear-gradient(100deg, rgba(6,16,34,0.9) 0%, rgba(6,16,34,0.66) 48%, rgba(6,16,34,0.28) 100%),
+        linear-gradient(to top, rgba(6,16,34,0.6) 0%, rgba(6,16,34,0) 42%);
+    }
+    .hero-inner {
+      padding-top: 48px;
+      padding-bottom: 46px;
+    }
+    .hero-tag {
+      max-width: 100%;
+      padding: 7px 12px;
+      margin-bottom: 16px;
+      font-size: .72rem;
+      line-height: 1.25;
+    }
+    .hero h1 {
+      max-width: 100%;
+      font-size: clamp(1.65rem, 7.4vw, 2.05rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .hero p.lead {
+      max-width: 100%;
+      font-size: .98rem;
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .hero .btn-row { gap: 10px; margin-top: 22px; }
+    .hero .btn { padding: 11px 18px; font-size: .84rem; }
+    .hero-dots { margin-top: 24px; }
   }
 }
