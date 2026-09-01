@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { CatalogSideNav } from "@/components/catalog-side-nav";
 import { ServicioItems } from "@/components/servicio-items";
 import { getServicio, servicios } from "@/data/servicios";
+import { buildFaqJsonLd } from "@/components/case-study";
 
 interface ServicioPageProps {
   params: Promise<{ slug: string }>;
@@ -36,8 +37,14 @@ export default async function ServicioDetailPage({ params }: ServicioPageProps) 
     label: s.title,
   }));
 
+  const faqJsonLd = servicio.faqs && servicio.faqs.length > 0 ? buildFaqJsonLd(servicio.faqs) : null;
+
   return (
     <>
+      {faqJsonLd ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      ) : null}
+
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">
@@ -115,6 +122,23 @@ export default async function ServicioDetailPage({ params }: ServicioPageProps) 
                 </div>
               </Reveal>
             ))}
+          </div>
+        </section>
+      ) : null}
+
+      {servicio.faqs && servicio.faqs.length > 0 ? (
+        <section className="bg-gray section-tight">
+          <div className="container">
+            <div className="eyebrow">Preguntas frecuentes</div>
+            <h2 className="max-w-[640px]">Sobre {servicio.title.toLowerCase()}</h2>
+            <div className="grid grid-cols-1 gap-6 mt-9 max-w-[760px]">
+              {servicio.faqs.map((faq) => (
+                <Reveal key={faq.q} className="card p-6">
+                  <h3 className="mb-2 text-[1.05rem]">{faq.q}</h3>
+                  <p className="text-[.95rem] text-ink-700 m-0">{faq.a}</p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
       ) : null}

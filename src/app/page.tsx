@@ -317,7 +317,7 @@ export default function HomePage() {
               <li>Certificación mediante equipo de medición toque y paso (Metrel)</li>
             </ul>
             <div className="btn-row">
-              <Link href="/proyectos" className="btn btn-outline">
+              <Link href="/proyectos/metro-de-quito" className="btn btn-outline">
                 Ver caso completo
               </Link>
             </div>

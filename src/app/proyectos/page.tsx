@@ -18,6 +18,7 @@ const projects = [
     text: "Sistema de iluminación completa y montajes electromecánicos bajo normativa Clase 1 División 1. Tableros MCC 220V SIEMENS.",
     amount: "$800.000",
     image: "/assets/proyecto-sherwin-williams.webp",
+    caseSlug: "sherwin-williams",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <path d="M4 21V9l8-6 8 6v12" />
@@ -57,6 +58,7 @@ const projects = [
     text: "Suministro, instalación y puesta en marcha de un variador de medio voltaje de 300 kW a 4.16 kV.",
     amount: "$300.000",
     image: "/assets/proyecto-ucem.webp",
+    caseSlug: "ucem",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <path d="M3 21h18M6 21V9l3-3v15M13 21V5l3-3v19" />
@@ -69,6 +71,7 @@ const projects = [
     text: "Fabricación y montaje del sistema eléctrico de la celda de soldadura para el modelo KIA Sportage.",
     amount: "$280.000",
     image: "/assets/proyecto-aymesa.webp",
+    caseSlug: "aymesa",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={1.3}>
         <circle cx="7" cy="17" r="2" />
@@ -103,6 +106,13 @@ const projects = [
     ),
   },
 ];
+
+const caseStudyByClient: Record<string, string> = {
+  "Consorcio Línea 1 Metro de Quito": "metro-de-quito",
+  "Arca Continental (Coca-Cola)": "arca-continental",
+  "Sherwin Williams (Pinturas Cóndor)": "sherwin-williams",
+  "Aymesa (KIA Motors)": "aymesa",
+};
 
 const experienceTable = [
   ["Consorcio Línea 1 Metro de Quito", "Infraestructura urbana", "Sistema de mallas a tierra + acometidas de socorro 25kV", "$1.620.181,67"],
@@ -174,6 +184,11 @@ export default function ProyectosPage() {
                 <div className="font-display font-extrabold text-2xl text-blue-700">$171.126,07</div>
               </div>
             </div>
+            <div className="btn-row mt-6.5">
+              <Link href="/proyectos/metro-de-quito" className="btn btn-blue">
+                Ver caso completo →
+              </Link>
+            </div>
           </div>
           <Reveal>
             <IndustrialPlate minHeight={420} image="/assets/proyecto-metro-destacado.webp" imageAlt="Metro de Quito" />
@@ -200,6 +215,11 @@ export default function ProyectosPage() {
                     <span>Monto invertido</span>
                     <strong>{project.amount}</strong>
                   </div>
+                  {project.caseSlug ? (
+                    <Link href={`/proyectos/${project.caseSlug}`} className="tag mt-3">
+                      Ver caso completo →
+                    </Link>
+                  ) : null}
                 </div>
               </Reveal>
             ))}
@@ -229,7 +249,15 @@ export default function ProyectosPage() {
               <tbody>
                 {experienceTable.map((row) => (
                   <tr key={row[0] + row[2]}>
-                    <td>{row[0]}</td>
+                    <td>
+                      {caseStudyByClient[row[0]] ? (
+                        <Link href={`/proyectos/${caseStudyByClient[row[0]]}`} className="text-blue-700 font-semibold">
+                          {row[0]}
+                        </Link>
+                      ) : (
+                        row[0]
+                      )}
+                    </td>
                     <td>{row[1]}</td>
                     <td>{row[2]}</td>
                     <td className="amount">{row[3]}</td>

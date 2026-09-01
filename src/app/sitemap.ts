@@ -45,11 +45,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  const casosEntries: MetadataRoute.Sitemap = [
+    "metro-de-quito",
+    "arca-continental",
+    "sherwin-williams",
+    "ucem",
+    "aymesa",
+  ].map((slug) => ({
+    url: `${SITE_URL}/proyectos/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...navEntries,
     ...servicioEntries,
     ...productoEntries,
     ...productoItemEntries,
     ...servicioItemEntries,
+    ...casosEntries,
   ];
 }

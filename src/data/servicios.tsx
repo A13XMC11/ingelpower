@@ -17,6 +17,11 @@ export interface ServicioGaleriaItem {
   imageAlt: string;
 }
 
+export interface ServicioFaq {
+  q: string;
+  a: string;
+}
+
 export interface ServicioItem {
   slug: string;
   title: string;
@@ -27,6 +32,7 @@ export interface ServicioItem {
   note?: string;
   items?: ServicioSubItem[];
   galeria?: ServicioGaleriaItem[];
+  faqs?: ServicioFaq[];
   icon: ReactNode;
   image: string;
   cardImageClass?: string;
@@ -48,6 +54,16 @@ export const servicios: ServicioItem[] = [
       "Cámaras de transformación y subestaciones en contenedor para zonas remotas o industriales",
       "Variadores de medio voltaje y arrancadores a voltaje reducido para grandes motores",
       "Comisionamiento con protocolo de pruebas de alta tensión, relés de protección y entrega de As-Built",
+    ],
+    faqs: [
+      {
+        q: "¿Qué niveles de media tensión maneja INGELPOWER?",
+        a: "Ejecutamos proyectos de 15kV, 17.5kV y 25kV: celdas de media tensión, soterramiento de cables, cámaras de transformación y variadores de medio voltaje, desde la ingeniería básica con software ETAP hasta el comisionamiento final.",
+      },
+      {
+        q: "¿Qué es la coordinación de protecciones y por qué es crítica?",
+        a: "Es el estudio (cortocircuito, arco eléctrico y selectividad, hecho con ETAP) que define cómo deben actuar los relés y protecciones de un sistema eléctrico para que, ante una falla, se desconecte solo el tramo afectado. Sin esa coordinación, un error puede dejar sin suministro a una planta entera o destruir un transformador en segundos.",
+      },
     ],
     image: "/assets/servicios-proyecto-media-tension.jpg",
     minHeight: 520,
@@ -73,6 +89,20 @@ export const servicios: ServicioItem[] = [
       "Certificación final con medición de tensiones de toque y paso — entrega de informe técnico",
     ],
     note: "Proyecto icónico: SPT en las 15 estaciones y pozos del Metro de Quito, bajo diseño y supervisión de ACCIONA España. Único contratista ecuatoriano en ejecutar mallas a tierra bajo estándar europeo para infraestructura de transporte masivo.",
+    faqs: [
+      {
+        q: "¿Qué es una malla a tierra (SPT) y cuándo se necesita?",
+        a: "Es un sistema de conductores enterrados que dispersa corrientes de falla y descargas atmosféricas de forma segura, protegiendo personas y equipos. Se necesita en cualquier subestación, planta industrial o infraestructura donde una falla eléctrica sin una ruta de tierra adecuada pueda generar tensiones de toque y paso peligrosas.",
+      },
+      {
+        q: "¿Cómo se calcula el diseño de una malla a tierra?",
+        a: "Se parte de la medición de resistividad del suelo con el método Wenner (equipo Metrel, 4 electrodos) y se modela la malla conforme a IEEE 80 y estándares europeos, calculando el calibre del conductor, la separación de la retícula y la profundidad de enterramiento para que las tensiones de toque y paso queden dentro de los límites seguros.",
+      },
+      {
+        q: "¿Cómo se certifica que una malla a tierra cumple la normativa?",
+        a: "Con una medición final de tensiones de toque y paso usando equipo especializado, comparando los resultados contra los límites de IEEE 80, y entregando un informe técnico de certificación. INGELPOWER lo hace con equipo de medición propio, el mismo protocolo usado en el Metro de Quito bajo supervisión de ACCIONA España.",
+      },
+    ],
     image: "/assets/servicio-mallas-tierra.webp",
     minHeight: 280,
     icon: (
@@ -132,6 +162,20 @@ export const servicios: ServicioItem[] = [
         imageAlt: "Técnico de INGELPOWER realizando análisis termográfico a un tablero eléctrico",
       },
     ],
+    faqs: [
+      {
+        q: "¿Qué diferencia hay entre un tablero MCC y un tablero de distribución?",
+        a: "Un tablero MCC (Motor Control Center) agrupa los arrancadores, variadores y protecciones de todos los motores de una planta en un solo gabinete. Un tablero de distribución, en cambio, reparte la energía desde la acometida hacia los distintos circuitos y cargas de la instalación. INGELPOWER fabrica ambos bajo norma NEMA con componentes Siemens, ABB y Schneider.",
+      },
+      {
+        q: "¿Qué es un tablero de transferencia automática (ATS) y para qué sirve?",
+        a: "Es un tablero que detecta la falla del suministro eléctrico principal y conmuta automáticamente hacia una fuente de respaldo (generador u otra acometida) sin intervención manual, garantizando continuidad de servicio en instalaciones críticas. INGELPOWER los fabrica de 4 polos hasta 2500A con lógica programable.",
+      },
+      {
+        q: "¿Qué es un equipo 'explosion proof' y cuándo se necesita?",
+        a: "Es equipamiento eléctrico certificado bajo normas NEC/ATEX para operar en áreas clasificadas donde hay riesgo de atmósfera explosiva (petroquímica, minería), diseñado para no generar chispas ni superficies calientes que puedan encender vapores o gases inflamables.",
+      },
+    ],
     image: "/assets/tablero-bypass.webp",
     minHeight: 280,
     icon: (
@@ -155,6 +199,20 @@ export const servicios: ServicioItem[] = [
       "Eliminación de armónicos con filtro activo AFQ Circutor — THD-I < 5% según IEEE 519",
       "Informe técnico antes y después con medición de ahorro real en kVAR y factor de potencia",
     ],
+    faqs: [
+      {
+        q: "¿Cómo se calcula la multa por bajo factor de potencia en Ecuador?",
+        a: "Las empresas distribuidoras aplican recargos del 30% al 50% sobre la energía reactiva consumida cuando el factor de potencia de la instalación cae por debajo de 0.92, el mínimo exigido por la normativa eléctrica ecuatoriana.",
+      },
+      {
+        q: "¿Banco de condensadores o SVG electrónico: cuál necesito?",
+        a: "Un banco de condensadores automático corrige el factor de potencia de forma escalonada y es la solución más económica para cargas estables. Un compensador estático SVG corrige de forma dinámica y continua (respuesta menor a 20ms), ideal para cargas variables o con arranques bruscos que un banco convencional no puede seguir. El diagnóstico con analizador de calidad de energía durante 7 días determina cuál aplica a cada planta.",
+      },
+      {
+        q: "¿Qué es un filtro activo de armónicos y cuándo se necesita?",
+        a: "Es un equipo que inyecta corriente en contrafase para cancelar los armónicos generados por cargas no lineales (variadores, UPS, equipos electrónicos), reduciendo la distorsión armónica total (THD-I) por debajo del 5% exigido por IEEE 519. Se necesita cuando los armónicos, y no solo el factor de potencia, están afectando la calidad de energía de la instalación.",
+      },
+    ],
     image: "/assets/CorrectorFactorDePotencia.webp",
     minHeight: 280,
     icon: (
@@ -176,6 +234,16 @@ export const servicios: ServicioItem[] = [
       "Gestión de permisos y aprobación ante empresas distribuidoras (EEQ, CNEL, EERSSA)",
       "Reubicación de transformadores y readecuación de cámaras de transformación existentes",
     ],
+    faqs: [
+      {
+        q: "¿Qué es una acometida eléctrica de socorro?",
+        a: "Es una conexión eléctrica secundaria de respaldo que entra en operación automáticamente cuando falla la acometida principal, garantizando que instalaciones críticas no pierdan suministro. INGELPOWER las ha ejecutado en media tensión (15kV y 25kV) con tablero de transferencia automática, incluyendo las 15 estaciones del Metro de Quito.",
+      },
+      {
+        q: "¿Quién gestiona los permisos de una acometida eléctrica ante la empresa distribuidora?",
+        a: "INGELPOWER gestiona directamente los permisos y la aprobación del diseño ante las empresas distribuidoras (EEQ, CNEL, EERSSA), como parte del servicio de ingeniería, procura y construcción de la acometida.",
+      },
+    ],
     image: "/assets/servicio-acometidas.webp",
     minHeight: 240,
     icon: (
@@ -194,6 +262,16 @@ export const servicios: ServicioItem[] = [
       "Soporte técnico en campo durante la medición e interpretación de resultados",
       "Entrega de informe técnico con los valores medidos y comparación contra límites normativos",
       "Equipos calibrados y disponibles para alquiler por día, semana o proyecto",
+    ],
+    faqs: [
+      {
+        q: "¿Necesito contratar un proyecto completo para alquilar el equipo de medición?",
+        a: "No. INGELPOWER alquila el equipo especializado FLUKE y METREL por día, semana o proyecto, con soporte técnico incluido, sin necesidad de contratar el servicio de ingeniería completo.",
+      },
+      {
+        q: "¿El alquiler incluye soporte técnico e informe de resultados?",
+        a: "Sí. El alquiler incluye soporte técnico en campo durante la medición y un informe técnico con los valores medidos, comparados contra los límites normativos aplicables.",
+      },
     ],
     items: [
       {
