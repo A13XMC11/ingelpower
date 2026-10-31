@@ -41,7 +41,7 @@ export function SiteFooter() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/593998308866"
+                href="https://wa.me/593992681212"
                 aria-label="WhatsApp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,11 +77,13 @@ export function SiteFooter() {
             <ul>
               <li>Quito, Ecuador</li>
               <li>
-                <a href="tel:+593984255690">+593 98 425 5690</a>
-              </li>
-              <li>
-                <a href="https://wa.me/593998308866" target="_blank" rel="noopener noreferrer">
-                  WhatsApp: +593 99 830 8866
+                WhatsApp:{" "}
+                <a href="https://wa.me/593984255690" target="_blank" rel="noopener noreferrer">
+                  +593 98 425 5690
+                </a>
+                {" / "}
+                <a href="https://wa.me/593992681212" target="_blank" rel="noopener noreferrer">
+                  +593 99 268 1212
                 </a>
               </li>
               <li>

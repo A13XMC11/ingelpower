@@ -44,7 +44,6 @@ export function SiteHeader() {
         <div className="container">
           <div>Energía que trasciende — Ingeniería eléctrica y media tensión</div>
           <div className="topbar-links">
-            <a href="tel:+593984255690">+593 98 425 5690</a>
             <a href="mailto:ingenieria@ingelpower.com">ingenieria@ingelpower.com</a>
             <a href="mailto:proyectos@ingelpower.com">proyectos@ingelpower.com</a>
           </div>

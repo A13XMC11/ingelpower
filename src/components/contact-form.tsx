@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 type SubmitState = "idle" | "submitting" | "success";
 
-const WHATSAPP_NUMBER = "593998308866";
+const WHATSAPP_NUMBER = "593992681212";
 
 function buildWhatsAppMessage(fields: {
   name: FormDataEntryValue | null;

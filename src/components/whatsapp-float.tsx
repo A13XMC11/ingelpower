@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "593998308866";
+const WHATSAPP_NUMBER = "593992681212";
 const WHATSAPP_MESSAGE = "Hola INGELPOWER, quisiera más información sobre sus servicios.";
 
 export function WhatsAppFloat() {
